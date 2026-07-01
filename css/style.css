@@ -1,0 +1,455 @@
+/* Portal de Robótica Industrial 4.0 - Estilos Simplificados */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  color: #333;
+  background-color: #f5f5f5;
+  line-height: 1.6;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* CABEÇALHO */
+
+.cabecalho {
+  background-color: #0b2545;
+  color: white;
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.barra-navegacao {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.logo {
+  font-size: 1.3rem;
+  font-weight: bold;
+}
+
+.logo span {
+  color: #ff7a00;
+}
+
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 1.5rem;
+  cursor: pointer;
+}
+
+.menu {
+  list-style: none;
+  display: flex;
+  gap: 1.5rem;
+}
+
+.menu a {
+  color: white;
+  padding: 0.4rem 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.menu a:hover,
+.menu a.ativo {
+  border-bottom-color: #ff7a00;
+}
+
+/* HERO */
+
+.hero {
+  background: linear-gradient(135deg, #0b2545, #13315c);
+  color: white;
+  padding: 3rem 1.5rem;
+  text-align: center;
+}
+
+.selo {
+  display: inline-block;
+  background-color: #ff7a00;
+  color: white;
+  font-size: 0.7rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  margin-bottom: 1rem;
+}
+
+.hero h1 {
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.hero p {
+  max-width: 700px;
+  margin: 0 auto;
+  color: #d7deea;
+}
+
+/* CONTEÚDO */
+
+.conteudo {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+}
+
+.secao {
+  margin-bottom: 2.5rem;
+}
+
+.secao h2 {
+  font-size: 1.5rem;
+  color: #0b2545;
+  margin-bottom: 1rem;
+  border-left: 5px solid #ff7a00;
+  padding-left: 0.7rem;
+}
+
+.secao h3 {
+  font-size: 1.1rem;
+  color: #13315c;
+  margin: 1rem 0 0.5rem;
+}
+
+.secao p, .secao li {
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.secao ul {
+  padding-left: 1.5rem;
+  margin-bottom: 0.8rem;
+}
+
+/* CARDS */
+
+.grade-robos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1.2rem;
+  margin-top: 1.5rem;
+}
+
+.card-robo {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  overflow: hidden;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.card-robo:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.imagem-placeholder {
+  background-color: #e8e8e8;
+  height: 140px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  font-size: 0.8rem;
+  text-align: center;
+  border-bottom: 1px solid #ddd;
+}
+
+.card-corpo {
+  padding: 1rem;
+}
+
+.card-robo h3 {
+  color: #0b2545;
+  margin: 0 0 0.4rem;
+  font-size: 1rem;
+}
+
+.card-robo p {
+  font-size: 0.9rem;
+  color: #666;
+}
+
+/* BOTÃO */
+
+.botao {
+  display: inline-block;
+  background-color: #ff7a00;
+  color: white;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  margin-top: 0.8rem;
+  transition: background-color 0.2s;
+}
+
+.botao:hover {
+  background-color: #e56c00;
+}
+
+/* FICHA TÉCNICA */
+
+.ficha-tecnica {
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+  padding: 1rem;
+  margin-top: 1rem;
+}
+
+.tabela-caracteristicas {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.tabela-caracteristicas th,
+.tabela-caracteristicas td {
+  text-align: left;
+  padding: 0.6rem;
+  border-bottom: 1px solid #ddd;
+}
+
+.tabela-caracteristicas th {
+  background-color: #f0f0f0;
+  color: #0b2545;
+  font-weight: bold;
+  width: 40%;
+}
+
+/* MODELOS */
+
+.grade-modelos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.card-modelo {
+  background-color: white;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.08);
+}
+
+.card-modelo .imagem-placeholder {
+  height: 100px;
+  margin-bottom: 0.7rem;
+}
+
+.card-modelo h4 {
+  color: #0b2545;
+  font-size: 0.95rem;
+  margin-bottom: 0.2rem;
+}
+
+.card-modelo .fabricante {
+  display: block;
+  font-size: 0.8rem;
+  color: #ff7a00;
+  font-weight: bold;
+  margin-bottom: 0.4rem;
+}
+
+.card-modelo p {
+  font-size: 0.85rem;
+  color: #666;
+}
+
+/* CAIXA DESTAQUE */
+
+.caixa-destaque {
+  background-color: #e8f1ff;
+  border-left: 5px solid #13315c;
+  padding: 1rem;
+  border-radius: 5px;
+  margin: 1rem 0;
+}
+
+/* IMAGEM ILUSTRATIVA */
+
+.imagem-ilustrativa {
+  background-color: white;
+  border: 2px dashed #ccc;
+  border-radius: 8px;
+  height: 200px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #999;
+  text-align: center;
+  margin: 1rem 0;
+  padding: 1rem;
+}
+
+/* NAVEGAÇÃO */
+
+.navegacao-robos {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-top: 2rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid #ddd;
+}
+
+.navegacao-robos a {
+  background-color: white;
+  border: 1px solid #ddd;
+  padding: 0.6rem 1rem;
+  border-radius: 5px;
+  font-size: 0.85rem;
+  font-weight: bold;
+  color: #0b2545;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+.navegacao-robos a:hover {
+  background-color: #ff7a00;
+  color: white;
+  border-color: #ff7a00;
+}
+
+/* BOTÃO TOPO */
+
+#botao-topo {
+  position: fixed;
+  bottom: 1.5rem;
+  right: 1.5rem;
+  background-color: #ff7a00;
+  color: white;
+  border: none;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 1.2rem;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  display: none;
+  align-items: center;
+  justify-content: center;
+}
+
+#botao-topo.visivel {
+  display: flex;
+}
+
+#botao-topo:hover {
+  background-color: #e56c00;
+}
+
+/* RODAPÉ */
+
+.rodape {
+  background-color: #0b2545;
+  color: #999;
+  text-align: center;
+  padding: 1.5rem;
+  font-size: 0.85rem;
+  margin-top: 2rem;
+}
+
+.rodape span {
+  color: #ff7a00;
+}
+
+/* RESPONSIVO */
+
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    gap: 0;
+    background-color: #13315c;
+    padding: 0.5rem 0;
+    margin-top: 0.5rem;
+    position: absolute;
+    top: 50px;
+    left: 0;
+    right: 0;
+  }
+
+  .menu.aberto {
+    display: flex;
+  }
+
+  .menu li {
+    width: 100%;
+  }
+
+  .menu a {
+    display: block;
+    padding: 0.8rem 1.5rem;
+    border-bottom: none;
+    border-left: 3px solid transparent;
+  }
+
+  .menu a:hover,
+  .menu a.ativo {
+    background-color: #0b2545;
+    border-left-color: #ff7a00;
+    border-bottom: none;
+  }
+
+  .barra-navegacao {
+    flex-wrap: wrap;
+  }
+
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+
+  .grade-robos {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 480px) {
+  .conteudo {
+    padding: 1.5rem 1rem;
+  }
+
+  .tabela-caracteristicas th {
+    width: 50%;
+    font-size: 0.85rem;
+  }
+
+  .tabela-caracteristicas td {
+    font-size: 0.85rem;
+  }
+}

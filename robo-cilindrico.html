@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robô Cilíndrico | Portal Robótica Industrial 4.0</title>
+  <meta name="description" content="Robô Cilíndrico: conceito, funcionamento, características, aplicações e modelos comerciais.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="cabecalho">
+    <nav class="barra-navegacao">
+      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu">
+      </button>
+      <ul class="menu" id="menu-principal">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="iot.html">IoT</a></li>
+        <li><a href="robotica-industrial.html">Robótica Industrial</a></li>
+        <li><a href="robo-cartesiano.html">Cartesiano</a></li>
+        <li><a href="robo-scara.html">SCARA</a></li>
+        <li><a href="robo-articulado.html">Articulado</a></li>
+        <li><a href="robo-cilindrico.html">Cilíndrico</a></li>
+        <li><a href="robo-delta.html">Delta</a></li>
+        <li><a href="robo-polar.html">Polar</a></li>
+        <li><a href="robo-colaborativo.html">Cobot</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <section class="hero">
+    <span class="selo">Modelo de Robô</span>
+    <h1>Robô Cilíndrico</h1>
+    <p>Combina rotação na base com movimento linear vertical e radial.</p>
+  </section>
+
+  <main class="conteudo">
+
+    <section class="secao">
+      <h2>Conceito</h2>
+      <p>O robô cilíndrico utiliza um sistema de coordenadas cilíndricas para
+        posicionar seu efetuador final: uma junta rotativa na base gira o braço em torno de um
+        eixo vertical, enquanto juntas lineares controlam o deslocamento vertical (eixo Z) e
+        radial (para dentro e fora). O nome vem do formato cilíndrico do seu espaço de
+        trabalho.</p>
+      <div class="imagem-ilustrativa">[ Imagem ilustrativa: estrutura do Robô Cilíndrico ]</div>
+    </section>
+
+    <section class="secao">
+      <h2>Princípio de funcionamento</h2>
+      <p>A base giratória posiciona o braço angularmente, um eixo linear vertical
+        eleva ou abaixa o efetuador, e um eixo linear radial estende ou recolhe o braço. Essa
+        combinação de um movimento rotativo com dois lineares resulta em uma estrutura
+        mecanicamente simples, rígida e de fácil controle.</p>
+    </section>
+
+    <section class="secao">
+      <h2>Principais características técnicas</h2>
+      <div class="ficha-tecnica">
+        <table class="tabela-caracteristicas">
+        <tr><th>Graus de liberdade</th><td>3 (1 rotação + 2 translações)</td></tr>
+        <tr><th>Tipo de movimento</th><td>Rotativo na base, linear em Z e no eixo radial</td></tr>
+        <tr><th>Precisão</th><td>Média a alta</td></tr>
+        <tr><th>Velocidade</th><td>Média</td></tr>
+        <tr><th>Capacidade de carga</th><td>Média a alta</td></tr>
+        <tr><th>Área de trabalho</th><td>Formato cilíndrico</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>Aplicações industriais</h2>
+      <ul>
+        <li>Manuseio de materiais em ambientes industriais;</li>
+        <li>Operações de máquinas (carga e descarga de peças);</li>
+        <li>Montagem em linhas de produção;</li>
+        <li>Soldagem em pontos de difícil acesso;</li>
+        <li>Movimentação de peças em fundições.</li>
+      </ul>
+    </section>
+
+    <section class="secao">
+      <h2>Integração com automação e IoT</h2>
+      <div class="caixa-destaque">
+        <p>A simplicidade mecânica do robô cilíndrico facilita a instalação de sensores de
+        posição angular e linear, cujos dados podem ser integrados a CLPs conectados a redes
+        industriais (Profinet, Modbus TCP). Isso permite supervisionar remotamente o ciclo de
+        trabalho e identificar desvios de desempenho ao longo do tempo.</p>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>Modelos comerciais</h2>
+      <p>Confira alguns modelos de mercado, de fabricantes distintos:</p>
+      <div class="grade-modelos">
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: Seiko RT3300 ]</div>
+          <h4>Seiko RT3300</h4>
+          <span class="fabricante">Seiko Epson</span>
+          <p>Robô cilíndrico voltado para operações de carga e descarga de máquinas.</p>
+        </div>
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: Yaskawa Cylindrical Series ]</div>
+          <h4>Yaskawa Cylindrical Series</h4>
+          <span class="fabricante">Yaskawa</span>
+          <p>Linha de robôs cilíndricos para manuseio de materiais em ambientes industriais.</p>
+        </div>
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: Stäubli CS Cylindrical ]</div>
+          <h4>Stäubli CS Cylindrical</h4>
+          <span class="fabricante">Stäubli</span>
+          <p>Sistema robótico cilíndrico para aplicações de montagem e manuseio de peças médias.</p>
+        </div>
+      </div>
+    </section>
+
+    <nav class="navegacao-robos">
+      <a href="robo-articulado.html">&larr; Robô Articulado</a>
+      <a href="index.html">Voltar ao início</a>
+      <a href="robo-delta.html">Robô Delta &rarr;</a>
+    </nav>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Portal <span>Robótica Industrial 4.0</span> &mdash; Catálogo técnico e educativo sobre robôs industriais e IoT.</p>
+    <p>Projeto acadêmico desenvolvido para fins de estudo em Indústria 4.0.</p>
+  </footer>
+
+  <button id="botao-topo" aria-label="Voltar ao topo">&uarr;</button>
+
+
+</body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robô Polar | Portal Robótica Industrial 4.0</title>
+  <meta name="description" content="Robô Polar: conceito, funcionamento, características, aplicações e modelos comerciais.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="cabecalho">
+    <nav class="barra-navegacao">
+      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu">
+      </button>
+      <ul class="menu" id="menu-principal">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="iot.html">IoT</a></li>
+        <li><a href="robotica-industrial.html">Robótica Industrial</a></li>
+        <li><a href="robo-cartesiano.html">Cartesiano</a></li>
+        <li><a href="robo-scara.html">SCARA</a></li>
+        <li><a href="robo-articulado.html">Articulado</a></li>
+        <li><a href="robo-cilindrico.html">Cilíndrico</a></li>
+        <li><a href="robo-delta.html">Delta</a></li>
+        <li><a href="robo-polar.html">Polar</a></li>
+        <li><a href="robo-colaborativo.html">Cobot</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <section class="hero">
+    <span class="selo">Modelo de Robô</span>
+    <h1>Robô Polar</h1>
+    <p>Também chamado de esférico, utiliza coordenadas polares para grandes áreas de trabalho.</p>
+  </section>
+
+  <main class="conteudo">
+
+    <section class="secao">
+      <h2>Conceito</h2>
+      <p>O robô polar, ou esférico, é uma das configurações mais antigas da robótica
+        industrial. Ele combina duas juntas rotativas (uma na base e outra no ombro) com uma
+        junta linear que estende ou recolhe o braço, formando um sistema de coordenadas polares
+        (esféricas) que resulta em um grande volume de trabalho.</p>
+      <div class="imagem-ilustrativa">[ Imagem ilustrativa: estrutura do Robô Polar ]</div>
+    </section>
+
+    <section class="secao">
+      <h2>Princípio de funcionamento</h2>
+      <p>A junta da base gira o braço horizontalmente, a junta do ombro inclina o
+        braço verticalmente, e um atuador linear (telescópico) estende o braço radialmente.
+        Juntas essas três movimentações, o efetuador final alcança pontos distribuídos em um
+        volume esférico ao redor da base do robô.</p>
+    </section>
+
+    <section class="secao">
+      <h2>Principais características técnicas</h2>
+      <div class="ficha-tecnica">
+        <table class="tabela-caracteristicas">
+        <tr><th>Graus de liberdade</th><td>3 (2 rotações + 1 translação)</td></tr>
+        <tr><th>Tipo de movimento</th><td>Rotativo na base e ombro, linear no braço</td></tr>
+        <tr><th>Precisão</th><td>Média</td></tr>
+        <tr><th>Velocidade</th><td>Média</td></tr>
+        <tr><th>Capacidade de carga</th><td>Média a alta</td></tr>
+        <tr><th>Área de trabalho</th><td>Formato esférico</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>Aplicações industriais</h2>
+      <ul>
+        <li>Manuseio de materiais pesados;</li>
+        <li>Operações de solda em pontos distantes da base;</li>
+        <li>Carregamento de máquinas industriais;</li>
+        <li>Movimentação de peças em fundições e forjarias;</li>
+        <li>Aplicações em ambientes com grande alcance necessário.</li>
+      </ul>
+    </section>
+
+    <section class="secao">
+      <h2>Integração com automação e IoT</h2>
+      <div class="caixa-destaque">
+        <p>Embora seja uma configuração mais tradicional, robôs polares modernos podem
+        receber retrofit com sensores de torque e encoders conectados a gateways IoT, permitindo
+        que fábricas mais antigas integrem esses equipamentos a sistemas digitais de
+        monitoramento sem substituir toda a estrutura mecânica.</p>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>Modelos comerciais</h2>
+      <p>Confira alguns modelos de mercado, de fabricantes distintos:</p>
+      <div class="grade-modelos">
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: Unimate PUMA (linha histórica) ]</div>
+          <h4>Unimate PUMA (linha histórica)</h4>
+          <span class="fabricante">Unimation</span>
+          <p>Um dos primeiros robôs industriais polares, referência histórica da robótica.</p>
+        </div>
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: Kawasaki MX Series ]</div>
+          <h4>Kawasaki MX Series</h4>
+          <span class="fabricante">Kawasaki Robotics</span>
+          <p>Robôs de grande alcance para manuseio de cargas pesadas em ambientes industriais.</p>
+        </div>
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: Toshiba Machine Polar Arm ]</div>
+          <h4>Toshiba Machine Polar Arm</h4>
+          <span class="fabricante">Toshiba Machine (Shibaura)</span>
+          <p>Linha de robôs de configuração polar para aplicações de manuseio industrial.</p>
+        </div>
+      </div>
+    </section>
+
+    <nav class="navegacao-robos">
+      <a href="robo-delta.html">&larr; Robô Delta</a>
+      <a href="index.html">Voltar ao início</a>
+      <a href="robo-colaborativo.html">Robô Colaborativo &rarr;</a>
+    </nav>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Portal <span>Robótica Industrial 4.0</span> &mdash; Catálogo técnico e educativo sobre robôs industriais e IoT.</p>
+    <p>Projeto acadêmico desenvolvido para fins de estudo em Indústria 4.0.</p>
+  </footer>
+
+  <button id="botao-topo" aria-label="Voltar ao topo">&uarr;</button>
+
+</body>
+</html>

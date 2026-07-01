@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Robô SCARA | Portal Robótica Industrial 4.0</title>
+  <meta name="description" content="Robô SCARA: conceito, funcionamento, características, aplicações e modelos comerciais.">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <header class="cabecalho">
+    <nav class="barra-navegacao">
+      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu">
+      </button>
+      <ul class="menu" id="menu-principal">
+        <li><a href="index.html">Início</a></li>
+        <li><a href="iot.html">IoT</a></li>
+        <li><a href="robotica-industrial.html">Robótica Industrial</a></li>
+        <li><a href="robo-cartesiano.html">Cartesiano</a></li>
+        <li><a href="robo-scara.html">SCARA</a></li>
+        <li><a href="robo-articulado.html">Articulado</a></li>
+        <li><a href="robo-cilindrico.html">Cilíndrico</a></li>
+        <li><a href="robo-delta.html">Delta</a></li>
+        <li><a href="robo-polar.html">Polar</a></li>
+        <li><a href="robo-colaborativo.html">Cobot</a></li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <section class="hero">
+    <span class="selo">Modelo de Robô</span>
+    <h1>Robô SCARA</h1>
+    <p>Selective Compliance Assembly Robot Arm — braço rígido na vertical e flexível na horizontal.</p>
+  </section>
+
+  <main class="conteudo">
+
+    <section class="secao">
+      <h2>Conceito</h2>
+      <p>SCARA é a sigla para Selective Compliance Assembly Robot Arm. É um robô com
+        dois eixos rotativos paralelos que permitem movimento no plano horizontal, além de um
+        eixo linear vertical. Sua estrutura é rígida no eixo Z e complacente (flexível) no plano
+        XY, o que o torna extremamente rápido e preciso em tarefas de montagem.</p>
+      <div class="imagem-ilustrativa">[ Imagem ilustrativa: estrutura do Robô SCARA ]</div>
+    </section>
+
+    <section class="secao">
+      <h2>Princípio de funcionamento</h2>
+      <p>O braço SCARA possui duas juntas rotativas dispostas horizontalmente,
+        que posicionam o efetuador final em qualquer ponto do plano XY, e uma junta linear
+        (ou rotativa) no eixo Z responsável pela penetração vertical, como em operações de
+        encaixe e parafusamento. A configuração horizontal permite altíssima velocidade de
+        deslocamento entre pontos.</p>
+    </section>
+
+    <section class="secao">
+      <h2>Principais características técnicas</h2>
+      <div class="ficha-tecnica">
+        <table class="tabela-caracteristicas">
+        <tr><th>Graus de liberdade</th><td>4 (2 rotações no plano + 1 translação vertical + 1 rotação do punho)</td></tr>
+        <tr><th>Tipo de movimento</th><td>Rotativo no plano horizontal, linear no eixo Z</td></tr>
+        <tr><th>Precisão</th><td>Muito alta</td></tr>
+        <tr><th>Velocidade</th><td>Muito alta</td></tr>
+        <tr><th>Capacidade de carga</th><td>Baixa a média (até ~20 kg)</td></tr>
+        <tr><th>Área de trabalho</th><td>Formato cilíndrico achatado</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>Aplicações industriais</h2>
+      <ul>
+        <li>Montagem de placas de circuito eletrônico;</li>
+        <li>Inserção de componentes e parafusamento;</li>
+        <li>Manuseio de peças pequenas em alta velocidade;</li>
+        <li>Embalagem de produtos leves;</li>
+        <li>Testes e inspeção de qualidade.</li>
+      </ul>
+    </section>
+
+    <section class="secao">
+      <h2>Integração com automação e IoT</h2>
+      <div class="caixa-destaque">
+        <p>Controladores de robôs SCARA modernos suportam protocolos como EtherCAT e
+        OPC-UA, permitindo integração direta com sistemas MES da fábrica. Dados de ciclo,
+        tempo de execução e falhas de posicionamento podem ser enviados em tempo real para
+        dashboards de produção, apoiando decisões de manutenção e balanceamento de linha.</p>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>Modelos comerciais</h2>
+      <p>Confira alguns modelos de mercado, de fabricantes distintos:</p>
+      <div class="grade-modelos">
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: EPSON G-Series (G6) ]</div>
+          <h4>EPSON G-Series (G6)</h4>
+          <span class="fabricante">Epson</span>
+          <p>SCARA de alta velocidade voltado para montagem eletrônica de precisão.</p>
+        </div>
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: FANUC SR-3iA ]</div>
+          <h4>FANUC SR-3iA</h4>
+          <span class="fabricante">FANUC</span>
+          <p>Robô SCARA compacto para tarefas de manuseio e montagem em espaços reduzidos.</p>
+        </div>
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: Yamaha YK-XE Series ]</div>
+          <h4>Yamaha YK-XE Series</h4>
+          <span class="fabricante">Yamaha Robotics</span>
+          <p>Linha de robôs SCARA voltada para automação de linhas de montagem industriais.</p>
+        </div>
+      </div>
+    </section>
+
+    <nav class="navegacao-robos">
+      <a href="robo-cartesiano.html">&larr; Robô Cartesiano</a>
+      <a href="index.html">Voltar ao início</a>
+      <a href="robo-articulado.html">Robô Articulado &rarr;</a>
+    </nav>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Portal <span>Robótica Industrial 4.0</span> &mdash; Catálogo técnico e educativo sobre robôs industriais e IoT.</p>
+    <p>Projeto acadêmico desenvolvido para fins de estudo em Indústria 4.0.</p>
+  </footer>
+
+  <button id="botao-topo" aria-label="Voltar ao topo">&uarr;</button>
+
+</body>
+</html>
