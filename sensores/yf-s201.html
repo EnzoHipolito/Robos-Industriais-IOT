@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>YF-S201 | Portal Robótica Industrial 4.0</title>
+  <meta name="description" content="YF-S201: conceito, princípio de funcionamento, especificações técnicas, aplicações industriais e modelos comerciais.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="cabecalho">
+    <nav class="barra-navegacao">
+      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+      <ul class="menu" id="menu-principal">
+        <li><a href="../index.html">In&iacute;cio</a></li>
+        <li><a href="../iot.html">IoT</a></li>
+        <li><a href="../robotica-industrial.html">Rob&oacute;tica Industrial</a></li>
+
+        <li class="item-dropdown">
+          <button class="botao-dropdown" aria-expanded="false" aria-controls="submenu-robos">
+            Rob&ocirc;s <span class="seta">&#9662;</span>
+          </button>
+          <ul class="submenu" id="submenu-robos">
+            <li><a href="../robos/robo-cartesiano.html">Cartesiano</a></li>
+            <li><a href="../robos/robo-scara.html">SCARA</a></li>
+            <li><a href="../robos/robo-articulado.html">Articulado</a></li>
+            <li><a href="../robos/robo-cilindrico.html">Cil&iacute;ndrico</a></li>
+            <li><a href="../robos/robo-delta.html">Delta</a></li>
+            <li><a href="../robos/robo-polar.html">Polar</a></li>
+            <li><a href="../robos/robo-colaborativo.html">Colaborativo (Cobot)</a></li>
+          </ul>
+        </li>
+
+        <li class="item-dropdown">
+          <button class="botao-dropdown" aria-expanded="false" aria-controls="submenu-sensores">
+            Sensores <span class="seta">&#9662;</span>
+          </button>
+          <ul class="submenu" id="submenu-sensores">
+            <li><a href="../sensores/dht22.html">DHT22 &mdash; Temp./Umidade</a></li>
+            <li><a href="../sensores/ds18b20.html">DS18B20 &mdash; Temperatura</a></li>
+            <li><a href="../sensores/bh1750.html">BH1750 &mdash; Luminosidade</a></li>
+            <li><a href="../sensores/hc-sr04.html">HC-SR04 &mdash; Dist&acirc;ncia</a></li>
+            <li><a href="../sensores/hc-sr501.html">PIR HC-SR501 &mdash; Movimento</a></li>
+            <li><a href="../sensores/mq-2.html">MQ-2 &mdash; G&aacute;s e Fuma&ccedil;a</a></li>
+            <li><a href="../sensores/umidade-solo.html">Umidade do Solo (Capacitivo)</a></li>
+            <li><a href="../sensores/yf-s201.html">YF-S201 &mdash; Fluxo de &Aacute;gua</a></li>
+            <li><a href="../sensores/acs712.html">ACS712 &mdash; Corrente</a></li>
+            <li><a href="../sensores/mfrc522.html">MFRC522 &mdash; RFID</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <section class="hero">
+    <span class="selo">Sensor &middot; Fluxo (Vazão)</span>
+    <h1>YF-S201</h1>
+    <p>Medidor de vazão de água por turbina e efeito Hall, com saída em pulsos proporcionais ao fluxo.</p>
+  </section>
+
+  <main class="conteudo">
+
+    <section class="secao">
+      <h2>Identificação</h2>
+      <div class="ficha-tecnica">
+        <table class="tabela-caracteristicas">
+        <tr><th>Nome do sensor</th><td>YF-S201</td></tr>
+        <tr><th>Categoria</th><td>Fluxo (Vazão)</td></tr>
+        <tr><th>Tipo de sinal</th><td>Digital (trem de pulsos em frequência)</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>Conceito</h2>
+      <p>O YF-S201 é um sensor de vazão de água composto por um corpo plástico com roscas de 1/2 polegada, uma turbina interna (rotor) e um sensor de efeito Hall. Ele mede o volume de líquido que passa pela tubulação por unidade de tempo, normalmente expresso em litros por minuto. Por ser barato, simples de instalar em linha e fornecer uma saída digital de fácil leitura, é amplamente utilizado em projetos de automação hidráulica, controle de consumo de água e dosagem de líquidos. Sua limitação é a presença de partes móveis, que exigem água relativamente limpa e sofrem desgaste ao longo do tempo.</p>
+      <div class="imagem-ilustrativa">[ Imagem ilustrativa: YF-S201 ]</div>
+    </section>
+
+    <section class="secao">
+      <h2>Princípio de funcionamento</h2>
+      <p>Quando a água atravessa o corpo do sensor, ela empurra as pás da turbina interna, fazendo-a girar com velocidade proporcional à vazão. No eixo do rotor há um pequeno ímã permanente. A cada volta, esse ímã passa diante de um sensor de efeito Hall fixado na parede externa do corpo, que detecta a variação do campo magnético e gera um pulso elétrico quadrado na saída. Assim, a frequência dos pulsos é diretamente proporcional à vazão. Para o YF-S201, a relação característica é <strong>F = 7,5 × Q</strong>, onde F é a frequência em Hz e Q a vazão em litros por minuto — o que significa cerca de 450 pulsos por litro escoado. Integrando a contagem de pulsos ao longo do tempo, obtém-se o volume total consumido.</p>
+    </section>
+
+    <section class="secao">
+      <h2>Principais especificações técnicas</h2>
+      <div class="ficha-tecnica">
+        <table class="tabela-caracteristicas">
+        <tr><th>Faixa de vazão</th><td>1 L/min a 30 L/min</td></tr>
+        <tr><th>Fator de conversão</th><td>F (Hz) = 7,5 × Q (L/min); cerca de 450 pulsos por litro</td></tr>
+        <tr><th>Pressão máxima de trabalho</th><td>1,75 MPa (cerca de 17,5 bar)</td></tr>
+        <tr><th>Tensão de alimentação</th><td>5 V a 18 V CC</td></tr>
+        <tr><th>Corrente de operação</th><td>Máximo de 15 mA em 5 V</td></tr>
+        <tr><th>Precisão típica</th><td>±10% (melhora bastante com calibração)</td></tr>
+        <tr><th>Conexão hidráulica</th><td>Rosca macho de 1/2 polegada (BSP)</td></tr>
+        <tr><th>Temperatura do líquido</th><td>-25 °C a +80 °C</td></tr>
+        <tr><th>Umidade de operação</th><td>35% a 90% UR</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>Tipo de sinal</h2>
+      <div class="caixa-destaque">
+        <p><strong>Digital (trem de pulsos em frequência)</strong></p>
+      </div>
+      <p>A saída do YF-S201 é um sinal digital em onda quadrada de coletor aberto, que exige um resistor de pull-up (normalmente já presente no módulo) e cuja frequência representa a vazão instantânea. A leitura correta é feita por interrupção externa: o microcontrolador conta os pulsos durante uma janela fixa — em geral um segundo — e divide o total pelo fator de conversão para obter os litros por minuto. Como as bordas dos pulsos podem ser rápidas, a rotina de interrupção deve ser mínima, apenas incrementando um contador declarado como <em>volatile</em>, deixando o cálculo para o laço principal.</p>
+    </section>
+
+    <section class="secao">
+      <h2>Aplicações industriais e IoT</h2>
+      <ul>
+        <li>Medição de consumo de água em processos industriais e utilidades;</li>
+        <li>Dosagem controlada de líquidos em misturas e envase;</li>
+        <li>Controle de fluxo em sistemas de refrigeração e torres de arrefecimento;</li>
+        <li>Detecção de vazamentos por consumo anormal fora do horário produtivo;</li>
+        <li>Monitoramento de irrigação e reúso de água;</li>
+        <li>Submedição individualizada de consumo em condomínios e plantas fabris.</li>
+      </ul>
+    </section>
+
+    <section class="secao">
+      <h2>Exemplo de utilização em um projeto</h2>
+      <p>No circuito de água de refrigeração de uma máquina de solda, um YF-S201 é instalado na tubulação de entrada. O Arduino conta os pulsos por interrupção e calcula a vazão a cada segundo, além de acumular o volume total consumido no turno. Se a vazão cair abaixo de 3 L/min — indício de bomba defeituosa, filtro entupido ou mangueira dobrada —, o sistema bloqueia a partida da máquina para evitar superaquecimento do transformador e envia um alerta à manutenção. O volume acumulado é exportado diariamente para o sistema de gestão de utilidades, permitindo apurar o custo de água por peça produzida.</p>
+      <pre class="bloco-codigo"><code>const int PINO_FLUXO = 2;         // pino com interrupcao
+volatile unsigned int pulsos = 0;
+float volumeTotal = 0.0;
+
+void contarPulso() {
+  pulsos++;
+}
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(PINO_FLUXO, INPUT_PULLUP);
+  attachInterrupt(digitalPinToInterrupt(PINO_FLUXO),
+                  contarPulso, RISING);
+}
+
+void loop() {
+  pulsos = 0;
+  interrupts();
+  delay(1000);                    // janela de contagem de 1 s
+  noInterrupts();
+
+  float vazao = pulsos / 7.5;     // L/min
+  volumeTotal += vazao / 60.0;    // litros acumulados
+
+  Serial.print("Vazao: ");
+  Serial.print(vazao);
+  Serial.print(" L/min | Total: ");
+  Serial.print(volumeTotal);
+  Serial.println(" L");
+
+  if (vazao &lt; 3.0) {
+    Serial.println("ALERTA: fluxo de refrigeracao insuficiente!");
+  }
+}</code></pre>
+    </section>
+
+    <section class="secao">
+      <h2>Fabricantes e modelos comerciais</h2>
+      <p>Confira alguns modelos de mercado, de fabricantes distintos:</p>
+      <div class="grade-modelos">
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: YF-S201 ]</div>
+          <h4>YF-S201</h4>
+          <span class="fabricante">Diversos fabricantes</span>
+          <p>Modelo de 1/2 polegada, o mais comum em projetos didáticos e prediais.</p>
+        </div>
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: YF-S401 / YF-B10 ]</div>
+          <h4>YF-S401 / YF-B10</h4>
+          <span class="fabricante">Diversos fabricantes</span>
+          <p>Versões de menor vazão e de corpo metálico para uso mais severo.</p>
+        </div>
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: Medidores eletromagnéticos ]</div>
+          <h4>Medidores eletromagnéticos</h4>
+          <span class="fabricante">Endress+Hauser, Siemens, Burkert</span>
+          <p>Solução industrial sem partes móveis, com saída 4–20 mA e HART.</p>
+        </div>
+      </div>
+    </section>
+
+    <nav class="navegacao-robos">
+      <a href="umidade-solo.html">&larr; Sensor Capacitivo de Umidade do Solo</a>
+      <a href="../index.html">Voltar ao início</a>
+      <a href="acs712.html">ACS712 &rarr;</a>
+    </nav>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Portal <span>Robótica Industrial 4.0</span> &mdash; Catálogo técnico e educativo sobre robôs industriais e IoT.</p>
+    <p>Projeto acadêmico desenvolvido para fins de estudo em Indústria 4.0.</p>
+  </footer>
+
+  <button id="botao-topo" aria-label="Voltar ao topo">&uarr;</button>
+
+  <script src="../js/script.js"></script>
+
+</body>
+</html>

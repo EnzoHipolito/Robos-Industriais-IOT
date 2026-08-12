@@ -11,19 +11,44 @@
 
   <header class="cabecalho">
     <nav class="barra-navegacao">
-      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu">
-      </button>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
       <ul class="menu" id="menu-principal">
-        <li><a href="index.html">Início</a></li>
+        <li><a href="index.html">In&iacute;cio</a></li>
         <li><a href="iot.html">IoT</a></li>
-        <li><a href="robotica-industrial.html">Robótica Industrial</a></li>
-        <li><a href="robo-cartesiano.html">Cartesiano</a></li>
-        <li><a href="robo-scara.html">SCARA</a></li>
-        <li><a href="robo-articulado.html">Articulado</a></li>
-        <li><a href="robo-cilindrico.html">Cilíndrico</a></li>
-        <li><a href="robo-delta.html">Delta</a></li>
-        <li><a href="robo-polar.html">Polar</a></li>
-        <li><a href="robo-colaborativo.html">Cobot</a></li>
+        <li><a href="robotica-industrial.html">Rob&oacute;tica Industrial</a></li>
+
+        <li class="item-dropdown">
+          <button class="botao-dropdown" aria-expanded="false" aria-controls="submenu-robos">
+            Rob&ocirc;s <span class="seta">&#9662;</span>
+          </button>
+          <ul class="submenu" id="submenu-robos">
+            <li><a href="robos/robo-cartesiano.html">Cartesiano</a></li>
+            <li><a href="robos/robo-scara.html">SCARA</a></li>
+            <li><a href="robos/robo-articulado.html">Articulado</a></li>
+            <li><a href="robos/robo-cilindrico.html">Cil&iacute;ndrico</a></li>
+            <li><a href="robos/robo-delta.html">Delta</a></li>
+            <li><a href="robos/robo-polar.html">Polar</a></li>
+            <li><a href="robos/robo-colaborativo.html">Colaborativo (Cobot)</a></li>
+          </ul>
+        </li>
+
+        <li class="item-dropdown">
+          <button class="botao-dropdown" aria-expanded="false" aria-controls="submenu-sensores">
+            Sensores <span class="seta">&#9662;</span>
+          </button>
+          <ul class="submenu" id="submenu-sensores">
+            <li><a href="sensores/dht22.html">DHT22 &mdash; Temp./Umidade</a></li>
+            <li><a href="sensores/ds18b20.html">DS18B20 &mdash; Temperatura</a></li>
+            <li><a href="sensores/bh1750.html">BH1750 &mdash; Luminosidade</a></li>
+            <li><a href="sensores/hc-sr04.html">HC-SR04 &mdash; Dist&acirc;ncia</a></li>
+            <li><a href="sensores/hc-sr501.html">PIR HC-SR501 &mdash; Movimento</a></li>
+            <li><a href="sensores/mq-2.html">MQ-2 &mdash; G&aacute;s e Fuma&ccedil;a</a></li>
+            <li><a href="sensores/umidade-solo.html">Umidade do Solo (Capacitivo)</a></li>
+            <li><a href="sensores/yf-s201.html">YF-S201 &mdash; Fluxo de &Aacute;gua</a></li>
+            <li><a href="sensores/acs712.html">ACS712 &mdash; Corrente</a></li>
+            <li><a href="sensores/mfrc522.html">MFRC522 &mdash; RFID</a></li>
+          </ul>
+        </li>
       </ul>
     </nav>
   </header>
@@ -105,7 +130,7 @@
             <h3>Robô Cartesiano</h3>
             <p>Movimenta-se em três eixos lineares (X, Y, Z), ideal para tarefas de precisão como
               pick and place e usinagem.</p>
-            <a href="robo-cartesiano.html" class="botao">Ver detalhes</a>
+            <a href="robos/robo-cartesiano.html" class="botao">Ver detalhes</a>
           </div>
         </div>
 
@@ -115,7 +140,7 @@
             <h3>Robô SCARA</h3>
             <p>Braço com juntas rotativas horizontais, muito usado em montagem eletrônica e
               tarefas de alta velocidade.</p>
-            <a href="robo-scara.html" class="botao">Ver detalhes</a>
+            <a href="robos/robo-scara.html" class="botao">Ver detalhes</a>
           </div>
         </div>
 
@@ -125,7 +150,7 @@
             <h3>Robô Articulado</h3>
             <p>Possui múltiplas juntas rotativas, semelhante a um braço humano, com alta
               flexibilidade de movimento.</p>
-            <a href="robo-articulado.html" class="botao">Ver detalhes</a>
+            <a href="robos/robo-articulado.html" class="botao">Ver detalhes</a>
           </div>
         </div>
 
@@ -134,7 +159,7 @@
           <div class="card-corpo">
             <h3>Robô Cilíndrico</h3>
             <p>Combina movimento rotacional na base com deslocamento linear vertical e radial.</p>
-            <a href="robo-cilindrico.html" class="botao">Ver detalhes</a>
+            <a href="robos/robo-cilindrico.html" class="botao">Ver detalhes</a>
           </div>
         </div>
 
@@ -144,7 +169,7 @@
             <h3>Robô Delta</h3>
             <p>Estrutura paralela suspensa, conhecida pela altíssima velocidade em tarefas de
               separação e embalagem.</p>
-            <a href="robo-delta.html" class="botao">Ver detalhes</a>
+            <a href="robos/robo-delta.html" class="botao">Ver detalhes</a>
           </div>
         </div>
 
@@ -154,7 +179,7 @@
             <h3>Robô Polar</h3>
             <p>Também chamado esférico, utiliza coordenadas polares para alcançar grandes áreas
               de trabalho.</p>
-            <a href="robo-polar.html" class="botao">Ver detalhes</a>
+            <a href="robos/robo-polar.html" class="botao">Ver detalhes</a>
           </div>
         </div>
 
@@ -164,7 +189,120 @@
             <h3>Robô Colaborativo (Cobot)</h3>
             <p>Projetado para atuar lado a lado com humanos, com sensores de segurança e fácil
               programação.</p>
-            <a href="robo-colaborativo.html" class="botao">Ver detalhes</a>
+            <a href="robos/robo-colaborativo.html" class="botao">Ver detalhes</a>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <section class="secao" id="sensores">
+      <h2>Sensores para Automação e IoT</h2>
+      <p>Os sensores são os órgãos dos sentidos da fábrica inteligente: são eles que transformam
+        grandezas físicas &mdash; temperatura, luz, distância, corrente, vazão &mdash; em dados
+        digitais que podem ser lidos por microcontroladores, enviados para a nuvem e usados na tomada
+        de decisão. Conheça a seguir dez sensores muito utilizados em projetos de automação
+        industrial e de Internet das Coisas.</p>
+
+      <div class="grade-sensores">
+
+        <div class="card-sensor">
+          <div class="imagem-placeholder">[ Imagem: DHT22 ]</div>
+          <div class="card-corpo">
+            <h3>DHT22 (AM2302)</h3>
+            <span class="categoria">Temperatura e Umidade</span>
+            <p>Sensor digital que mede temperatura e umidade relativa do ar com boa precisão.</p>
+            <a href="sensores/dht22.html" class="botao">Ver detalhes</a>
+          </div>
+        </div>
+
+        <div class="card-sensor">
+          <div class="imagem-placeholder">[ Imagem: DS18B20 ]</div>
+          <div class="card-corpo">
+            <h3>DS18B20</h3>
+            <span class="categoria">Temperatura</span>
+            <p>Termômetro digital 1-Wire com endereço único, ideal para líquidos e redes de sensores.</p>
+            <a href="sensores/ds18b20.html" class="botao">Ver detalhes</a>
+          </div>
+        </div>
+
+        <div class="card-sensor">
+          <div class="imagem-placeholder">[ Imagem: BH1750 ]</div>
+          <div class="card-corpo">
+            <h3>BH1750</h3>
+            <span class="categoria">Luminosidade</span>
+            <p>Sensor I2C que entrega a intensidade luminosa já convertida em lux.</p>
+            <a href="sensores/bh1750.html" class="botao">Ver detalhes</a>
+          </div>
+        </div>
+
+        <div class="card-sensor">
+          <div class="imagem-placeholder">[ Imagem: HC-SR04 ]</div>
+          <div class="card-corpo">
+            <h3>HC-SR04</h3>
+            <span class="categoria">Distância</span>
+            <p>Sensor ultrassônico que mede distância pelo tempo de voo do som, sem contato.</p>
+            <a href="sensores/hc-sr04.html" class="botao">Ver detalhes</a>
+          </div>
+        </div>
+
+        <div class="card-sensor">
+          <div class="imagem-placeholder">[ Imagem: PIR HC-SR501 ]</div>
+          <div class="card-corpo">
+            <h3>PIR HC-SR501</h3>
+            <span class="categoria">Movimento</span>
+            <p>Detecta a movimentação de pessoas pela radiação infravermelha do calor corporal.</p>
+            <a href="sensores/hc-sr501.html" class="botao">Ver detalhes</a>
+          </div>
+        </div>
+
+        <div class="card-sensor">
+          <div class="imagem-placeholder">[ Imagem: MQ-2 ]</div>
+          <div class="card-corpo">
+            <h3>MQ-2</h3>
+            <span class="categoria">Gás</span>
+            <p>Sensor semicondutor para fumaça e gases combustíveis como GLP, metano e hidrogênio.</p>
+            <a href="sensores/mq-2.html" class="botao">Ver detalhes</a>
+          </div>
+        </div>
+
+        <div class="card-sensor">
+          <div class="imagem-placeholder">[ Imagem: Sensor capacitivo de umidade do solo ]</div>
+          <div class="card-corpo">
+            <h3>Umidade do Solo (Capacitivo)</h3>
+            <span class="categoria">Umidade</span>
+            <p>Sonda resistente à corrosão usada em irrigação automatizada e agricultura de precisão.</p>
+            <a href="sensores/umidade-solo.html" class="botao">Ver detalhes</a>
+          </div>
+        </div>
+
+        <div class="card-sensor">
+          <div class="imagem-placeholder">[ Imagem: YF-S201 ]</div>
+          <div class="card-corpo">
+            <h3>YF-S201</h3>
+            <span class="categoria">Fluxo (Vazão)</span>
+            <p>Medidor de vazão de água por turbina e efeito Hall, com saída em pulsos.</p>
+            <a href="sensores/yf-s201.html" class="botao">Ver detalhes</a>
+          </div>
+        </div>
+
+        <div class="card-sensor">
+          <div class="imagem-placeholder">[ Imagem: ACS712 ]</div>
+          <div class="card-corpo">
+            <h3>ACS712</h3>
+            <span class="categoria">Corrente Elétrica</span>
+            <p>Mede corrente contínua e alternada por efeito Hall, com isolação galvânica.</p>
+            <a href="sensores/acs712.html" class="botao">Ver detalhes</a>
+          </div>
+        </div>
+
+        <div class="card-sensor">
+          <div class="imagem-placeholder">[ Imagem: MFRC522 ]</div>
+          <div class="card-corpo">
+            <h3>MFRC522</h3>
+            <span class="categoria">RFID</span>
+            <p>Leitor RFID de 13,56 MHz para controle de acesso e rastreabilidade de peças.</p>
+            <a href="sensores/mfrc522.html" class="botao">Ver detalhes</a>
           </div>
         </div>
 
@@ -180,6 +318,8 @@
 
   <button id="botao-topo" aria-label="Voltar ao topo">&uarr;</button>
 
+
+  <script src="js/script.js"></script>
 
 </body>
 </html>

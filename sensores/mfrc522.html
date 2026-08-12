@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MFRC522 | Portal Robótica Industrial 4.0</title>
+  <meta name="description" content="MFRC522: conceito, princípio de funcionamento, especificações técnicas, aplicações industriais e modelos comerciais.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="cabecalho">
+    <nav class="barra-navegacao">
+      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+      <ul class="menu" id="menu-principal">
+        <li><a href="../index.html">In&iacute;cio</a></li>
+        <li><a href="../iot.html">IoT</a></li>
+        <li><a href="../robotica-industrial.html">Rob&oacute;tica Industrial</a></li>
+
+        <li class="item-dropdown">
+          <button class="botao-dropdown" aria-expanded="false" aria-controls="submenu-robos">
+            Rob&ocirc;s <span class="seta">&#9662;</span>
+          </button>
+          <ul class="submenu" id="submenu-robos">
+            <li><a href="../robos/robo-cartesiano.html">Cartesiano</a></li>
+            <li><a href="../robos/robo-scara.html">SCARA</a></li>
+            <li><a href="../robos/robo-articulado.html">Articulado</a></li>
+            <li><a href="../robos/robo-cilindrico.html">Cil&iacute;ndrico</a></li>
+            <li><a href="../robos/robo-delta.html">Delta</a></li>
+            <li><a href="../robos/robo-polar.html">Polar</a></li>
+            <li><a href="../robos/robo-colaborativo.html">Colaborativo (Cobot)</a></li>
+          </ul>
+        </li>
+
+        <li class="item-dropdown">
+          <button class="botao-dropdown" aria-expanded="false" aria-controls="submenu-sensores">
+            Sensores <span class="seta">&#9662;</span>
+          </button>
+          <ul class="submenu" id="submenu-sensores">
+            <li><a href="../sensores/dht22.html">DHT22 &mdash; Temp./Umidade</a></li>
+            <li><a href="../sensores/ds18b20.html">DS18B20 &mdash; Temperatura</a></li>
+            <li><a href="../sensores/bh1750.html">BH1750 &mdash; Luminosidade</a></li>
+            <li><a href="../sensores/hc-sr04.html">HC-SR04 &mdash; Dist&acirc;ncia</a></li>
+            <li><a href="../sensores/hc-sr501.html">PIR HC-SR501 &mdash; Movimento</a></li>
+            <li><a href="../sensores/mq-2.html">MQ-2 &mdash; G&aacute;s e Fuma&ccedil;a</a></li>
+            <li><a href="../sensores/umidade-solo.html">Umidade do Solo (Capacitivo)</a></li>
+            <li><a href="../sensores/yf-s201.html">YF-S201 &mdash; Fluxo de &Aacute;gua</a></li>
+            <li><a href="../sensores/acs712.html">ACS712 &mdash; Corrente</a></li>
+            <li><a href="../sensores/mfrc522.html">MFRC522 &mdash; RFID</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <section class="hero">
+    <span class="selo">Sensor &middot; RFID / Identificação</span>
+    <h1>MFRC522</h1>
+    <p>Leitor e gravador RFID de 13,56 MHz para controle de acesso e rastreabilidade de itens.</p>
+  </section>
+
+  <main class="conteudo">
+
+    <section class="secao">
+      <h2>Identificação</h2>
+      <div class="ficha-tecnica">
+        <table class="tabela-caracteristicas">
+        <tr><th>Nome do sensor</th><td>MFRC522</td></tr>
+        <tr><th>Categoria</th><td>RFID / Identificação</td></tr>
+        <tr><th>Tipo de sinal</th><td>Digital &mdash; SPI (o CI também suporta I2C e UART)</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>Conceito</h2>
+      <p>O MFRC522 é um circuito integrado leitor/gravador de RFID (identificação por radiofrequência) desenvolvido pela NXP Semiconductors, que opera na faixa de 13,56 MHz e é compatível com o padrão ISO/IEC 14443A, incluindo os cartões MIFARE Classic. Comercializado principalmente na forma do módulo RC522 — acompanhado de um cartão e um chaveiro —, permite ler o identificador único (UID) de cada etiqueta e também gravar dados em sua memória interna. É a base de praticamente todos os sistemas de crachá de aproximação, controle de acesso e rastreabilidade de peças de baixo e médio custo.</p>
+      <div class="imagem-ilustrativa">[ Imagem ilustrativa: MFRC522 ]</div>
+    </section>
+
+    <section class="secao">
+      <h2>Princípio de funcionamento</h2>
+      <p>O leitor gera um campo eletromagnético alternado de 13,56 MHz através de uma antena em espiral impressa na própria placa. As etiquetas (tags) são passivas: não possuem bateria. Quando entram nesse campo, a bobina da etiqueta capta energia por indução eletromagnética, alimentando seu microchip interno. Uma vez energizado, o chip responde modulando a carga sobre o campo do leitor — técnica conhecida como modulação de carga —, o que provoca pequenas variações detectadas pela antena do MFRC522 e interpretadas como dados. Todo o diálogo segue o protocolo ISO 14443A: o leitor solicita a presença de cartões, resolve colisões quando há mais de um no campo, seleciona um deles pelo UID e, se necessário, executa a autenticação de setor com uma chave de 6 bytes antes de liberar leitura ou gravação.</p>
+    </section>
+
+    <section class="secao">
+      <h2>Principais especificações técnicas</h2>
+      <div class="ficha-tecnica">
+        <table class="tabela-caracteristicas">
+        <tr><th>Frequência de operação</th><td>13,56 MHz</td></tr>
+        <tr><th>Protocolos suportados</th><td>ISO/IEC 14443A e MIFARE Classic 1K/4K, Ultralight</td></tr>
+        <tr><th>Distância de leitura</th><td>0 a 6 cm (varia com o tipo de etiqueta e da antena)</td></tr>
+        <tr><th>Tensão de alimentação</th><td>2,5 V a 3,3 V (o módulo RC522 usa 3,3 V)</td></tr>
+        <tr><th>Corrente de operação</th><td>13 mA a 26 mA (menos de 80 µA em modo de repouso)</td></tr>
+        <tr><th>Velocidade de transmissão</th><td>Até 848 kbit/s na interface aérea</td></tr>
+        <tr><th>Memória do cartão MIFARE 1K</th><td>1 KB, dividida em 16 setores de 4 blocos</td></tr>
+        <tr><th>Segurança</th><td>Autenticação por chaves A e B de 6 bytes por setor</td></tr>
+        <tr><th>Temperatura de operação</th><td>-25 °C a +85 °C</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>Tipo de sinal</h2>
+      <div class="caixa-destaque">
+        <p><strong>Digital &mdash; SPI (o CI também suporta I2C e UART)</strong></p>
+      </div>
+      <p>Nos módulos RC522, a comunicação com o microcontrolador é feita por SPI, usando as linhas SCK, MOSI, MISO, SDA (que funciona como chip select) e RST, com velocidade de até 10 Mbit/s. O circuito integrado MFRC522 também é capaz de operar em I2C e UART, mas essas interfaces exigem alterações de hardware na placa e raramente são usadas nos módulos comuns. Um ponto crítico de instalação: o módulo é alimentado com 3,3 V e não tolera 5 V no pino VCC, embora seus pinos de dados costumem aceitar sinais de 5 V vindos de um Arduino Uno.</p>
+    </section>
+
+    <section class="secao">
+      <h2>Aplicações industriais e IoT</h2>
+      <ul>
+        <li>Controle de acesso a áreas restritas e salas de máquinas por crachá;</li>
+        <li>Identificação do operador antes de liberar a operação de uma máquina;</li>
+        <li>Rastreabilidade de peças, ferramentas e paletes na linha de produção;</li>
+        <li>Controle de estoque e movimentação de almoxarifado;</li>
+        <li>Registro de ponto e apontamento de produção;</li>
+        <li>Gestão de ferramentaria com liberação e devolução automatizadas.</li>
+      </ul>
+    </section>
+
+    <section class="secao">
+      <h2>Exemplo de utilização em um projeto</h2>
+      <p>Na entrada de uma célula robotizada, um leitor MFRC522 é integrado ao sistema de intertravamento. O operador aproxima o crachá e o microcontrolador compara o UID lido com a lista de matrículas autorizadas e treinadas para aquele equipamento. Se o crachá for válido, o painel é liberado, a identidade do operador fica registrada com data e hora e a informação é enviada ao sistema MES junto com os dados de produção do turno. Crachás não autorizados mantêm a máquina bloqueada e geram um registro de tentativa de acesso indevido, o que atende tanto a requisitos de segurança quanto de rastreabilidade da qualidade.</p>
+      <pre class="bloco-codigo"><code>#include &lt;SPI.h&gt;
+#include &lt;MFRC522.h&gt;
+
+#define PINO_SDA 10
+#define PINO_RST 9
+
+MFRC522 leitor(PINO_SDA, PINO_RST);
+const String CRACHA_AUTORIZADO = "A3 F2 1B 04";
+const int PINO_LIBERACAO = 7;
+
+void setup() {
+  Serial.begin(9600);
+  SPI.begin();
+  leitor.PCD_Init();
+  pinMode(PINO_LIBERACAO, OUTPUT);
+  Serial.println("Aproxime o cracha do leitor...");
+}
+
+void loop() {
+  if (!leitor.PICC_IsNewCardPresent()) return;
+  if (!leitor.PICC_ReadCardSerial()) return;
+
+  String uid = "";
+  for (byte i = 0; i &lt; leitor.uid.size; i++) {
+    uid += String(leitor.uid.uidByte[i], HEX);
+    if (i &lt; leitor.uid.size - 1) uid += " ";
+  }
+  uid.toUpperCase();
+  Serial.println("UID lido: " + uid);
+
+  if (uid == CRACHA_AUTORIZADO) {
+    Serial.println("Acesso liberado.");
+    digitalWrite(PINO_LIBERACAO, HIGH);
+    delay(3000);
+    digitalWrite(PINO_LIBERACAO, LOW);
+  } else {
+    Serial.println("Acesso negado!");
+  }
+
+  leitor.PICC_HaltA();
+}</code></pre>
+    </section>
+
+    <section class="secao">
+      <h2>Fabricantes e modelos comerciais</h2>
+      <p>Confira alguns modelos de mercado, de fabricantes distintos:</p>
+      <div class="grade-modelos">
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: MFRC522 ]</div>
+          <h4>MFRC522</h4>
+          <span class="fabricante">NXP Semiconductors</span>
+          <p>Circuito integrado original, base de todos os módulos RC522.</p>
+        </div>
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: Módulo RC522 (kit com cartão e tag) ]</div>
+          <h4>Módulo RC522 (kit com cartão e tag)</h4>
+          <span class="fabricante">Diversos fabricantes</span>
+          <p>Placa pronta com antena impressa e interface SPI.</p>
+        </div>
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: PN532 / RDM6300 ]</div>
+          <h4>PN532 / RDM6300</h4>
+          <span class="fabricante">NXP / diversos</span>
+          <p>Alternativas com suporte a NFC (13,56 MHz) e a etiquetas de 125 kHz.</p>
+        </div>
+      </div>
+    </section>
+
+    <nav class="navegacao-robos">
+      <a href="acs712.html">&larr; ACS712</a>
+      <a href="../index.html">Voltar ao início</a>
+      <a href="../index.html">Início &rarr;</a>
+    </nav>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Portal <span>Robótica Industrial 4.0</span> &mdash; Catálogo técnico e educativo sobre robôs industriais e IoT.</p>
+    <p>Projeto acadêmico desenvolvido para fins de estudo em Indústria 4.0.</p>
+  </footer>
+
+  <button id="botao-topo" aria-label="Voltar ao topo">&uarr;</button>
+
+  <script src="../js/script.js"></script>
+
+</body>
+</html>

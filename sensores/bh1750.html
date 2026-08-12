@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BH1750 | Portal Robótica Industrial 4.0</title>
+  <meta name="description" content="BH1750: conceito, princípio de funcionamento, especificações técnicas, aplicações industriais e modelos comerciais.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="cabecalho">
+    <nav class="barra-navegacao">
+      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+      <ul class="menu" id="menu-principal">
+        <li><a href="../index.html">In&iacute;cio</a></li>
+        <li><a href="../iot.html">IoT</a></li>
+        <li><a href="../robotica-industrial.html">Rob&oacute;tica Industrial</a></li>
+
+        <li class="item-dropdown">
+          <button class="botao-dropdown" aria-expanded="false" aria-controls="submenu-robos">
+            Rob&ocirc;s <span class="seta">&#9662;</span>
+          </button>
+          <ul class="submenu" id="submenu-robos">
+            <li><a href="../robos/robo-cartesiano.html">Cartesiano</a></li>
+            <li><a href="../robos/robo-scara.html">SCARA</a></li>
+            <li><a href="../robos/robo-articulado.html">Articulado</a></li>
+            <li><a href="../robos/robo-cilindrico.html">Cil&iacute;ndrico</a></li>
+            <li><a href="../robos/robo-delta.html">Delta</a></li>
+            <li><a href="../robos/robo-polar.html">Polar</a></li>
+            <li><a href="../robos/robo-colaborativo.html">Colaborativo (Cobot)</a></li>
+          </ul>
+        </li>
+
+        <li class="item-dropdown">
+          <button class="botao-dropdown" aria-expanded="false" aria-controls="submenu-sensores">
+            Sensores <span class="seta">&#9662;</span>
+          </button>
+          <ul class="submenu" id="submenu-sensores">
+            <li><a href="../sensores/dht22.html">DHT22 &mdash; Temp./Umidade</a></li>
+            <li><a href="../sensores/ds18b20.html">DS18B20 &mdash; Temperatura</a></li>
+            <li><a href="../sensores/bh1750.html">BH1750 &mdash; Luminosidade</a></li>
+            <li><a href="../sensores/hc-sr04.html">HC-SR04 &mdash; Dist&acirc;ncia</a></li>
+            <li><a href="../sensores/hc-sr501.html">PIR HC-SR501 &mdash; Movimento</a></li>
+            <li><a href="../sensores/mq-2.html">MQ-2 &mdash; G&aacute;s e Fuma&ccedil;a</a></li>
+            <li><a href="../sensores/umidade-solo.html">Umidade do Solo (Capacitivo)</a></li>
+            <li><a href="../sensores/yf-s201.html">YF-S201 &mdash; Fluxo de &Aacute;gua</a></li>
+            <li><a href="../sensores/acs712.html">ACS712 &mdash; Corrente</a></li>
+            <li><a href="../sensores/mfrc522.html">MFRC522 &mdash; RFID</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <section class="hero">
+    <span class="selo">Sensor &middot; Luminosidade</span>
+    <h1>BH1750</h1>
+    <p>Sensor digital de intensidade luminosa com saída direta em lux e comunicação I2C.</p>
+  </section>
+
+  <main class="conteudo">
+
+    <section class="secao">
+      <h2>Identificação</h2>
+      <div class="ficha-tecnica">
+        <table class="tabela-caracteristicas">
+        <tr><th>Nome do sensor</th><td>BH1750</td></tr>
+        <tr><th>Categoria</th><td>Luminosidade</td></tr>
+        <tr><th>Tipo de sinal</th><td>Digital &mdash; barramento I2C</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>Conceito</h2>
+      <p>O BH1750 (também identificado como GY-302 na forma de módulo) é um sensor digital de luz ambiente fabricado pela ROHM Semiconductor. Sua grande vantagem sobre o LDR é entregar o valor de iluminância já convertido em lux, a unidade fotométrica padrão, sem necessidade de calibração, divisor de tensão ou conversor analógico-digital. Além disso, sua resposta espectral é próxima à da visão humana, o que torna a leitura muito mais fiel à percepção real de claridade do ambiente do que a de um sensor puramente resistivo.</p>
+      <div class="imagem-ilustrativa">[ Imagem ilustrativa: BH1750 ]</div>
+    </section>
+
+    <section class="secao">
+      <h2>Princípio de funcionamento</h2>
+      <p>O componente combina um fotodiodo sensível à luz visível com um amplificador de transimpedância, que converte a corrente gerada pelo fotodiodo em tensão, e um conversor analógico-digital de 16 bits. Um circuito lógico interno aplica o fator de conversão e disponibiliza o resultado em lux nos registradores acessíveis pelo barramento I2C. O tempo de integração da medição pode ser ajustado por software, o que permite equilibrar sensibilidade e velocidade de resposta: janelas maiores melhoram a leitura em ambientes escuros, enquanto janelas curtas evitam saturação sob luz intensa.</p>
+    </section>
+
+    <section class="secao">
+      <h2>Principais especificações técnicas</h2>
+      <div class="ficha-tecnica">
+        <table class="tabela-caracteristicas">
+        <tr><th>Faixa de medição</th><td>1 lx a 65.535 lx</td></tr>
+        <tr><th>Resolução</th><td>1 lx (modo padrão) e 0,5 lx (modo de alta resolução)</td></tr>
+        <tr><th>Tensão de alimentação</th><td>2,4 V a 3,6 V (módulos GY-302 aceitam 3,3 V e 5 V)</td></tr>
+        <tr><th>Consumo</th><td>Cerca de 120 µA em medição e 1 µA em modo de espera</td></tr>
+        <tr><th>Tempo de medição</th><td>Aproximadamente 120 ms em alta resolução; 16 ms no modo rápido</td></tr>
+        <tr><th>Endereços I2C</th><td>0x23 (pino ADDR em nível baixo) ou 0x5C (nível alto)</td></tr>
+        <tr><th>Resposta espectral</th><td>Próxima à curva de sensibilidade do olho humano</td></tr>
+        <tr><th>Influência de infravermelho</th><td>Muito baixa, com boa rejeição a fontes IR</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>Tipo de sinal</h2>
+      <div class="caixa-destaque">
+        <p><strong>Digital &mdash; barramento I2C</strong></p>
+      </div>
+      <p>A comunicação é feita pelo barramento I2C, usando as linhas SDA (dados) e SCL (clock), ambas com resistores de pull-up, geralmente já presentes nos módulos. O mestre envia um comando de configuração — modo contínuo ou de disparo único, alta ou baixa resolução — e em seguida lê 2 bytes contendo o valor bruto, que é dividido por 1,2 para obter a iluminância em lux. Como o endereço é selecionável entre dois valores, é possível ter dois BH1750 no mesmo barramento, convivendo com outros dispositivos I2C, como displays e sensores de pressão.</p>
+    </section>
+
+    <section class="secao">
+      <h2>Aplicações industriais e IoT</h2>
+      <ul>
+        <li>Controle automático de iluminação em galpões, escritórios e iluminação pública;</li>
+        <li>Ajuste de brilho de painéis, displays e IHMs em função da luz ambiente;</li>
+        <li>Monitoramento de luminosidade em estufas e sistemas de cultivo indoor;</li>
+        <li>Sistemas de economia de energia e automação predial (IoT em edifícios);</li>
+        <li>Verificação de níveis mínimos de iluminação exigidos por normas de segurança do trabalho;</li>
+        <li>Estações ambientais e projetos de monitoramento climático.</li>
+      </ul>
+    </section>
+
+    <section class="secao">
+      <h2>Exemplo de utilização em um projeto</h2>
+      <p>Em um projeto de eficiência energética de um galpão industrial, módulos BH1750 instalados junto às luminárias medem a iluminância sobre as bancadas. Um ESP8266 lê o valor em lux a cada 10 segundos e regula por PWM o driver das lâmpadas LED, mantendo os 500 lx exigidos pela norma independentemente da luz natural que entra pelas telhas translúcidas ao longo do dia. Os dados são enviados a um painel na nuvem, que calcula a economia de energia obtida em relação à operação com as luminárias sempre em potência máxima.</p>
+      <pre class="bloco-codigo"><code>#include &lt;Wire.h&gt;
+#include &lt;BH1750.h&gt;
+
+BH1750 luximetro;
+const int PINO_LED = 5;          // saida PWM do driver
+const float META_LUX = 500.0;
+
+void setup() {
+  Serial.begin(115200);
+  Wire.begin();
+  luximetro.begin(BH1750::CONTINUOUS_HIGH_RES_MODE);
+  pinMode(PINO_LED, OUTPUT);
+}
+
+void loop() {
+  float lux = luximetro.readLightLevel();
+  Serial.print(lux);
+  Serial.println(" lx");
+
+  // completa apenas a luz que falta para atingir a meta
+  int potencia = constrain(map(lux, 0, META_LUX, 255, 0), 0, 255);
+  analogWrite(PINO_LED, potencia);
+
+  delay(10000);
+}</code></pre>
+    </section>
+
+    <section class="secao">
+      <h2>Fabricantes e modelos comerciais</h2>
+      <p>Confira alguns modelos de mercado, de fabricantes distintos:</p>
+      <div class="grade-modelos">
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: BH1750FVI ]</div>
+          <h4>BH1750FVI</h4>
+          <span class="fabricante">ROHM Semiconductor</span>
+          <p>Componente original, em encapsulamento WSOF6.</p>
+        </div>
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: Módulo GY-302 ]</div>
+          <h4>Módulo GY-302</h4>
+          <span class="fabricante">Diversos fabricantes</span>
+          <p>Placa pronta com regulador de 3,3 V, compatível com Arduino e ESP32.</p>
+        </div>
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: TSL2561 / VEML7700 ]</div>
+          <h4>TSL2561 / VEML7700</h4>
+          <span class="fabricante">AMS / Vishay</span>
+          <p>Alternativas I2C com faixa dinâmica ainda maior.</p>
+        </div>
+      </div>
+    </section>
+
+    <nav class="navegacao-robos">
+      <a href="ds18b20.html">&larr; DS18B20</a>
+      <a href="../index.html">Voltar ao início</a>
+      <a href="hc-sr04.html">HC-SR04 &rarr;</a>
+    </nav>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Portal <span>Robótica Industrial 4.0</span> &mdash; Catálogo técnico e educativo sobre robôs industriais e IoT.</p>
+    <p>Projeto acadêmico desenvolvido para fins de estudo em Indústria 4.0.</p>
+  </footer>
+
+  <button id="botao-topo" aria-label="Voltar ao topo">&uarr;</button>
+
+  <script src="../js/script.js"></script>
+
+</body>
+</html>

@@ -11,19 +11,44 @@
 
   <header class="cabecalho">
     <nav class="barra-navegacao">
-      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu">
-      </button>
+      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
       <ul class="menu" id="menu-principal">
-        <li><a href="index.html">Início</a></li>
+        <li><a href="index.html">In&iacute;cio</a></li>
         <li><a href="iot.html">IoT</a></li>
-        <li><a href="robotica-industrial.html">Robótica Industrial</a></li>
-        <li><a href="robo-cartesiano.html">Cartesiano</a></li>
-        <li><a href="robo-scara.html">SCARA</a></li>
-        <li><a href="robo-articulado.html">Articulado</a></li>
-        <li><a href="robo-cilindrico.html">Cilíndrico</a></li>
-        <li><a href="robo-delta.html">Delta</a></li>
-        <li><a href="robo-polar.html">Polar</a></li>
-        <li><a href="robo-colaborativo.html">Cobot</a></li>
+        <li><a href="robotica-industrial.html">Rob&oacute;tica Industrial</a></li>
+
+        <li class="item-dropdown">
+          <button class="botao-dropdown" aria-expanded="false" aria-controls="submenu-robos">
+            Rob&ocirc;s <span class="seta">&#9662;</span>
+          </button>
+          <ul class="submenu" id="submenu-robos">
+            <li><a href="robos/robo-cartesiano.html">Cartesiano</a></li>
+            <li><a href="robos/robo-scara.html">SCARA</a></li>
+            <li><a href="robos/robo-articulado.html">Articulado</a></li>
+            <li><a href="robos/robo-cilindrico.html">Cil&iacute;ndrico</a></li>
+            <li><a href="robos/robo-delta.html">Delta</a></li>
+            <li><a href="robos/robo-polar.html">Polar</a></li>
+            <li><a href="robos/robo-colaborativo.html">Colaborativo (Cobot)</a></li>
+          </ul>
+        </li>
+
+        <li class="item-dropdown">
+          <button class="botao-dropdown" aria-expanded="false" aria-controls="submenu-sensores">
+            Sensores <span class="seta">&#9662;</span>
+          </button>
+          <ul class="submenu" id="submenu-sensores">
+            <li><a href="sensores/dht22.html">DHT22 &mdash; Temp./Umidade</a></li>
+            <li><a href="sensores/ds18b20.html">DS18B20 &mdash; Temperatura</a></li>
+            <li><a href="sensores/bh1750.html">BH1750 &mdash; Luminosidade</a></li>
+            <li><a href="sensores/hc-sr04.html">HC-SR04 &mdash; Dist&acirc;ncia</a></li>
+            <li><a href="sensores/hc-sr501.html">PIR HC-SR501 &mdash; Movimento</a></li>
+            <li><a href="sensores/mq-2.html">MQ-2 &mdash; G&aacute;s e Fuma&ccedil;a</a></li>
+            <li><a href="sensores/umidade-solo.html">Umidade do Solo (Capacitivo)</a></li>
+            <li><a href="sensores/yf-s201.html">YF-S201 &mdash; Fluxo de &Aacute;gua</a></li>
+            <li><a href="sensores/acs712.html">ACS712 &mdash; Corrente</a></li>
+            <li><a href="sensores/mfrc522.html">MFRC522 &mdash; RFID</a></li>
+          </ul>
+        </li>
       </ul>
     </nav>
   </header>
@@ -100,6 +125,8 @@
 
   <button id="botao-topo" aria-label="Voltar ao topo">&uarr;</button>
 
+
+  <script src="js/script.js"></script>
 
 </body>
 </html>

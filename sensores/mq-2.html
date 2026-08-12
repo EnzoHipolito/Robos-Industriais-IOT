@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>MQ-2 | Portal Robótica Industrial 4.0</title>
+  <meta name="description" content="MQ-2: conceito, princípio de funcionamento, especificações técnicas, aplicações industriais e modelos comerciais.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="cabecalho">
+    <nav class="barra-navegacao">
+      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+      <ul class="menu" id="menu-principal">
+        <li><a href="../index.html">In&iacute;cio</a></li>
+        <li><a href="../iot.html">IoT</a></li>
+        <li><a href="../robotica-industrial.html">Rob&oacute;tica Industrial</a></li>
+
+        <li class="item-dropdown">
+          <button class="botao-dropdown" aria-expanded="false" aria-controls="submenu-robos">
+            Rob&ocirc;s <span class="seta">&#9662;</span>
+          </button>
+          <ul class="submenu" id="submenu-robos">
+            <li><a href="../robos/robo-cartesiano.html">Cartesiano</a></li>
+            <li><a href="../robos/robo-scara.html">SCARA</a></li>
+            <li><a href="../robos/robo-articulado.html">Articulado</a></li>
+            <li><a href="../robos/robo-cilindrico.html">Cil&iacute;ndrico</a></li>
+            <li><a href="../robos/robo-delta.html">Delta</a></li>
+            <li><a href="../robos/robo-polar.html">Polar</a></li>
+            <li><a href="../robos/robo-colaborativo.html">Colaborativo (Cobot)</a></li>
+          </ul>
+        </li>
+
+        <li class="item-dropdown">
+          <button class="botao-dropdown" aria-expanded="false" aria-controls="submenu-sensores">
+            Sensores <span class="seta">&#9662;</span>
+          </button>
+          <ul class="submenu" id="submenu-sensores">
+            <li><a href="../sensores/dht22.html">DHT22 &mdash; Temp./Umidade</a></li>
+            <li><a href="../sensores/ds18b20.html">DS18B20 &mdash; Temperatura</a></li>
+            <li><a href="../sensores/bh1750.html">BH1750 &mdash; Luminosidade</a></li>
+            <li><a href="../sensores/hc-sr04.html">HC-SR04 &mdash; Dist&acirc;ncia</a></li>
+            <li><a href="../sensores/hc-sr501.html">PIR HC-SR501 &mdash; Movimento</a></li>
+            <li><a href="../sensores/mq-2.html">MQ-2 &mdash; G&aacute;s e Fuma&ccedil;a</a></li>
+            <li><a href="../sensores/umidade-solo.html">Umidade do Solo (Capacitivo)</a></li>
+            <li><a href="../sensores/yf-s201.html">YF-S201 &mdash; Fluxo de &Aacute;gua</a></li>
+            <li><a href="../sensores/acs712.html">ACS712 &mdash; Corrente</a></li>
+            <li><a href="../sensores/mfrc522.html">MFRC522 &mdash; RFID</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <section class="hero">
+    <span class="selo">Sensor &middot; Gás</span>
+    <h1>MQ-2</h1>
+    <p>Sensor semicondutor para detecção de fumaça e gases combustíveis como GLP, metano e hidrogênio.</p>
+  </section>
+
+  <main class="conteudo">
+
+    <section class="secao">
+      <h2>Identificação</h2>
+      <div class="ficha-tecnica">
+        <table class="tabela-caracteristicas">
+        <tr><th>Nome do sensor</th><td>MQ-2</td></tr>
+        <tr><th>Categoria</th><td>Gás</td></tr>
+        <tr><th>Tipo de sinal</th><td>Analógico (AO) e digital (DO por comparador LM393)</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>Conceito</h2>
+      <p>O MQ-2 é um sensor de gás da família MQ, baseado em um material semicondutor sensível à presença de gases combustíveis no ar. É capaz de detectar GLP, propano, butano, metano, álcool, hidrogênio e fumaça, sendo bastante utilizado em alarmes de incêndio e detectores de vazamento de baixo custo. Não é um sensor seletivo: ele responde a vários gases ao mesmo tempo, o que significa que indica a presença de uma atmosfera combustível, mas não identifica com precisão qual gás está presente nem sua concentração exata sem uma calibração cuidadosa para o gás alvo.</p>
+      <div class="imagem-ilustrativa">[ Imagem ilustrativa: MQ-2 ]</div>
+    </section>
+
+    <section class="secao">
+      <h2>Princípio de funcionamento</h2>
+      <p>O elemento sensor é uma pastilha de dióxido de estanho (SnO₂), um semicondutor cuja condutividade é baixa em ar limpo. Uma resistência interna de aquecimento mantém a pastilha entre 200 °C e 300 °C, temperatura na qual o oxigênio do ar fica adsorvido em sua superfície, capturando elétrons livres e elevando a resistência elétrica. Quando moléculas de gás combustível entram em contato com a superfície aquecida, elas reagem com esse oxigênio adsorvido e liberam os elétrons de volta ao material, reduzindo a resistência do sensor. Essa variação de resistência é convertida em tensão por um divisor resistivo e lida pelo conversor analógico-digital do microcontrolador: quanto maior a concentração de gás, maior a tensão de saída.</p>
+    </section>
+
+    <section class="secao">
+      <h2>Principais especificações técnicas</h2>
+      <div class="ficha-tecnica">
+        <table class="tabela-caracteristicas">
+        <tr><th>Gases detectados</th><td>GLP, propano, butano, metano, álcool, hidrogênio e fumaça</td></tr>
+        <tr><th>Faixa de detecção</th><td>300 ppm a 10.000 ppm</td></tr>
+        <tr><th>Tensão de alimentação</th><td>5 V CC</td></tr>
+        <tr><th>Consumo do aquecedor</th><td>Cerca de 150 mA (aproximadamente 800 mW)</td></tr>
+        <tr><th>Resistência de carga (RL)</th><td>Ajustável, normalmente entre 5 kΩ e 47 kΩ</td></tr>
+        <tr><th>Tempo de resposta</th><td>Menor que 10 s</td></tr>
+        <tr><th>Pré-aquecimento</th><td>Mínimo de 20 minutos; 24 a 48 h para estabilização inicial</td></tr>
+        <tr><th>Vida útil típica</th><td>Cerca de 5 anos em operação contínua</td></tr>
+        <tr><th>Faixa de temperatura de uso</th><td>-20 °C a +50 °C</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>Tipo de sinal</h2>
+      <div class="caixa-destaque">
+        <p><strong>Analógico (AO) e digital (DO por comparador LM393)</strong></p>
+      </div>
+      <p>O módulo MQ-2 oferece duas saídas. A saída analógica (AO) fornece uma tensão de 0 V a 5 V proporcional à concentração de gás; é a mais útil, pois permite acompanhar a evolução da leitura e definir limiares por software. A saída digital (DO) é gerada por um comparador LM393 associado a um potenciômetro de ajuste: ela muda de estado quando a concentração ultrapassa o limiar regulado manualmente, funcionando como um alarme simples de liga/desliga. Para leitura em placas de 3,3 V, é preciso adaptar o nível da saída analógica, já que o sensor é alimentado com 5 V.</p>
+    </section>
+
+    <section class="secao">
+      <h2>Aplicações industriais e IoT</h2>
+      <ul>
+        <li>Detecção de vazamento de gás em cozinhas industriais e áreas de utilidades;</li>
+        <li>Alarmes de incêndio e detecção precoce de fumaça em galpões;</li>
+        <li>Monitoramento de atmosferas explosivas em áreas classificadas;</li>
+        <li>Segurança em ambientes de armazenamento de combustíveis e solventes;</li>
+        <li>Sistemas de ventilação automatizada acionados por qualidade do ar;</li>
+        <li>Monitoramento remoto de segurança industrial via IoT.</li>
+      </ul>
+    </section>
+
+    <section class="secao">
+      <h2>Exemplo de utilização em um projeto</h2>
+      <p>Em uma central de gás que alimenta fornos industriais, um MQ-2 é instalado próximo ao ponto de conexão das tubulações. Um ESP32 lê a saída analógica a cada segundo e calcula uma média móvel para descartar picos isolados. Se a leitura ultrapassar o limiar calibrado, o sistema fecha a válvula solenoide de bloqueio, liga o exaustor da sala, aciona uma sirene e envia um alerta por MQTT para o supervisório e para o celular do técnico de segurança. O histórico das leituras fica registrado na nuvem, permitindo identificar pequenos vazamentos recorrentes antes que se tornem críticos.</p>
+      <pre class="bloco-codigo"><code>const int PINO_MQ2 = 34;         // entrada analogica do ESP32
+const int PINO_VALVULA = 26;
+const int LIMIAR = 1800;          // valor calibrado em ar limpo + margem
+
+int lerMedia() {
+  long soma = 0;
+  for (int i = 0; i &lt; 10; i++) {
+    soma += analogRead(PINO_MQ2);
+    delay(20);
+  }
+  return soma / 10;
+}
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(PINO_VALVULA, OUTPUT);
+  digitalWrite(PINO_VALVULA, HIGH);   // valvula aberta
+  delay(20000);                       // pre-aquecimento do sensor
+}
+
+void loop() {
+  int leitura = lerMedia();
+  Serial.print("Leitura MQ-2: ");
+  Serial.println(leitura);
+
+  if (leitura &gt; LIMIAR) {
+    digitalWrite(PINO_VALVULA, LOW);  // fecha o gas
+    Serial.println("ALERTA: vazamento de gas detectado!");
+  }
+
+  delay(1000);
+}</code></pre>
+    </section>
+
+    <section class="secao">
+      <h2>Fabricantes e modelos comerciais</h2>
+      <p>Confira alguns modelos de mercado, de fabricantes distintos:</p>
+      <div class="grade-modelos">
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: MQ-2 ]</div>
+          <h4>MQ-2</h4>
+          <span class="fabricante">Hanwei Electronics (Winsen)</span>
+          <p>Sensor original da série MQ, vendido solto ou em módulo.</p>
+        </div>
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: MQ-135 / MQ-7 ]</div>
+          <h4>MQ-135 / MQ-7</h4>
+          <span class="fabricante">Hanwei Electronics (Winsen)</span>
+          <p>Variantes para qualidade do ar e monóxido de carbono.</p>
+        </div>
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: Figaro TGS 2610 ]</div>
+          <h4>Figaro TGS 2610</h4>
+          <span class="fabricante">Figaro Engineering</span>
+          <p>Sensor de GLP de qualidade industrial, com maior estabilidade.</p>
+        </div>
+      </div>
+    </section>
+
+    <nav class="navegacao-robos">
+      <a href="hc-sr501.html">&larr; PIR HC-SR501</a>
+      <a href="../index.html">Voltar ao início</a>
+      <a href="umidade-solo.html">Sensor Capacitivo de Umidade do Solo &rarr;</a>
+    </nav>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Portal <span>Robótica Industrial 4.0</span> &mdash; Catálogo técnico e educativo sobre robôs industriais e IoT.</p>
+    <p>Projeto acadêmico desenvolvido para fins de estudo em Indústria 4.0.</p>
+  </footer>
+
+  <button id="botao-topo" aria-label="Voltar ao topo">&uarr;</button>
+
+  <script src="../js/script.js"></script>
+
+</body>
+</html>

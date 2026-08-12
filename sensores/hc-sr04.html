@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HC-SR04 | Portal Robótica Industrial 4.0</title>
+  <meta name="description" content="HC-SR04: conceito, princípio de funcionamento, especificações técnicas, aplicações industriais e modelos comerciais.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="cabecalho">
+    <nav class="barra-navegacao">
+      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+      <ul class="menu" id="menu-principal">
+        <li><a href="../index.html">In&iacute;cio</a></li>
+        <li><a href="../iot.html">IoT</a></li>
+        <li><a href="../robotica-industrial.html">Rob&oacute;tica Industrial</a></li>
+
+        <li class="item-dropdown">
+          <button class="botao-dropdown" aria-expanded="false" aria-controls="submenu-robos">
+            Rob&ocirc;s <span class="seta">&#9662;</span>
+          </button>
+          <ul class="submenu" id="submenu-robos">
+            <li><a href="../robos/robo-cartesiano.html">Cartesiano</a></li>
+            <li><a href="../robos/robo-scara.html">SCARA</a></li>
+            <li><a href="../robos/robo-articulado.html">Articulado</a></li>
+            <li><a href="../robos/robo-cilindrico.html">Cil&iacute;ndrico</a></li>
+            <li><a href="../robos/robo-delta.html">Delta</a></li>
+            <li><a href="../robos/robo-polar.html">Polar</a></li>
+            <li><a href="../robos/robo-colaborativo.html">Colaborativo (Cobot)</a></li>
+          </ul>
+        </li>
+
+        <li class="item-dropdown">
+          <button class="botao-dropdown" aria-expanded="false" aria-controls="submenu-sensores">
+            Sensores <span class="seta">&#9662;</span>
+          </button>
+          <ul class="submenu" id="submenu-sensores">
+            <li><a href="../sensores/dht22.html">DHT22 &mdash; Temp./Umidade</a></li>
+            <li><a href="../sensores/ds18b20.html">DS18B20 &mdash; Temperatura</a></li>
+            <li><a href="../sensores/bh1750.html">BH1750 &mdash; Luminosidade</a></li>
+            <li><a href="../sensores/hc-sr04.html">HC-SR04 &mdash; Dist&acirc;ncia</a></li>
+            <li><a href="../sensores/hc-sr501.html">PIR HC-SR501 &mdash; Movimento</a></li>
+            <li><a href="../sensores/mq-2.html">MQ-2 &mdash; G&aacute;s e Fuma&ccedil;a</a></li>
+            <li><a href="../sensores/umidade-solo.html">Umidade do Solo (Capacitivo)</a></li>
+            <li><a href="../sensores/yf-s201.html">YF-S201 &mdash; Fluxo de &Aacute;gua</a></li>
+            <li><a href="../sensores/acs712.html">ACS712 &mdash; Corrente</a></li>
+            <li><a href="../sensores/mfrc522.html">MFRC522 &mdash; RFID</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <section class="hero">
+    <span class="selo">Sensor &middot; Distância</span>
+    <h1>HC-SR04</h1>
+    <p>Sensor ultrassônico de distância sem contato, usado em medição de nível e desvio de obstáculos.</p>
+  </section>
+
+  <main class="conteudo">
+
+    <section class="secao">
+      <h2>Identificação</h2>
+      <div class="ficha-tecnica">
+        <table class="tabela-caracteristicas">
+        <tr><th>Nome do sensor</th><td>HC-SR04</td></tr>
+        <tr><th>Categoria</th><td>Distância</td></tr>
+        <tr><th>Tipo de sinal</th><td>Digital (dois pinos: disparo e eco por largura de pulso)</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>Conceito</h2>
+      <p>O HC-SR04 é um sensor ultrassônico que mede a distância até um objeto sem qualquer contato físico, utilizando ondas sonoras de 40 kHz — muito acima da faixa audível pelo ser humano. O módulo possui dois transdutores cilíndricos: um transmissor, que emite o pulso sonoro, e um receptor, que capta o eco refletido pelo obstáculo. É um dos sensores mais difundidos em robótica educacional e em automação de baixo custo, por ser simples, barato e independente da cor ou da transparência do alvo — características que costumam prejudicar sensores ópticos.</p>
+      <div class="imagem-ilustrativa">[ Imagem ilustrativa: HC-SR04 ]</div>
+    </section>
+
+    <section class="secao">
+      <h2>Princípio de funcionamento</h2>
+      <p>O funcionamento se baseia no princípio do tempo de voo (time of flight). Ao receber um pulso de 10 µs no pino TRIG, o módulo emite uma rajada de oito ciclos ultrassônicos a 40 kHz e coloca o pino ECHO em nível alto. Quando o eco retorna, o pino ECHO volta ao nível baixo. A duração do pulso em nível alto corresponde ao tempo que o som levou para ir até o obstáculo e voltar. Como a velocidade do som no ar é de aproximadamente 340 m/s (0,034 cm/µs), a distância é obtida pela fórmula <strong>distância = (tempo × 0,034) / 2</strong>, sendo a divisão por dois necessária porque o som percorre o trajeto de ida e volta. Vale lembrar que a velocidade do som varia com a temperatura, o que exige compensação em medições mais exigentes.</p>
+    </section>
+
+    <section class="secao">
+      <h2>Principais especificações técnicas</h2>
+      <div class="ficha-tecnica">
+        <table class="tabela-caracteristicas">
+        <tr><th>Faixa de medição</th><td>2 cm a 400 cm</td></tr>
+        <tr><th>Precisão</th><td>Cerca de 3 mm em condições ideais</td></tr>
+        <tr><th>Ângulo de abertura efetivo</th><td>Aproximadamente 15°</td></tr>
+        <tr><th>Frequência de trabalho</th><td>40 kHz</td></tr>
+        <tr><th>Tensão de alimentação</th><td>5 V CC</td></tr>
+        <tr><th>Corrente de operação</th><td>Cerca de 15 mA</td></tr>
+        <tr><th>Pulso de disparo (TRIG)</th><td>Nível alto de 10 µs</td></tr>
+        <tr><th>Sinal de retorno (ECHO)</th><td>Pulso proporcional ao tempo de voo</td></tr>
+        <tr><th>Frequência de leitura recomendada</th><td>Máximo de 20 medições por segundo</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>Tipo de sinal</h2>
+      <div class="caixa-destaque">
+        <p><strong>Digital (dois pinos: disparo e eco por largura de pulso)</strong></p>
+      </div>
+      <p>O HC-SR04 não usa nenhum protocolo serial: a informação está codificada na largura do pulso do pino ECHO. O microcontrolador gera o disparo em TRIG e, em seguida, mede com a função <em>pulseIn()</em> — ou por interrupção — quanto tempo o pino ECHO permanece em nível alto. É importante observar que o ECHO opera em 5 V; para ligá-lo a placas de 3,3 V, como ESP32 e Raspberry Pi, é necessário um divisor de tensão ou um conversor de nível lógico para não danificar a entrada.</p>
+    </section>
+
+    <section class="secao">
+      <h2>Aplicações industriais e IoT</h2>
+      <ul>
+        <li>Medição de nível de líquidos e de sólidos a granel em silos e reservatórios;</li>
+        <li>Detecção de obstáculos em robôs móveis e veículos autoguiados (AGV);</li>
+        <li>Contagem e detecção de presença de peças em esteiras transportadoras;</li>
+        <li>Sistemas de estacionamento e de segurança de aproximação;</li>
+        <li>Controle de posicionamento e de fim de curso sem contato;</li>
+        <li>Monitoramento de nível de resíduos em lixeiras inteligentes (smart cities).</li>
+      </ul>
+    </section>
+
+    <section class="secao">
+      <h2>Exemplo de utilização em um projeto</h2>
+      <p>Em um reservatório de água de processo, o HC-SR04 é montado no topo do tanque, apontado para baixo. O microcontrolador calcula o nível pela diferença entre a altura total do tanque e a distância medida até a lâmina d'água. Quando o nível cai abaixo de 20%, a bomba de reposição é acionada por um relé; ao atingir 90%, a bomba é desligada. O percentual é publicado continuamente em um painel de supervisão, permitindo acompanhar o consumo e detectar vazamentos por quedas anormais de nível fora dos horários de produção.</p>
+      <pre class="bloco-codigo"><code>const int PINO_TRIG = 9;
+const int PINO_ECHO = 10;
+const float ALTURA_TANQUE = 150.0;   // cm
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(PINO_TRIG, OUTPUT);
+  pinMode(PINO_ECHO, INPUT);
+}
+
+float medirDistancia() {
+  digitalWrite(PINO_TRIG, LOW);
+  delayMicroseconds(2);
+  digitalWrite(PINO_TRIG, HIGH);
+  delayMicroseconds(10);            // pulso de disparo
+  digitalWrite(PINO_TRIG, LOW);
+
+  long tempo = pulseIn(PINO_ECHO, HIGH, 30000);
+  return (tempo * 0.034) / 2.0;     // ida e volta
+}
+
+void loop() {
+  float distancia = medirDistancia();
+  float nivel = (ALTURA_TANQUE - distancia) / ALTURA_TANQUE * 100.0;
+
+  Serial.print("Nivel do tanque: ");
+  Serial.print(nivel);
+  Serial.println(" %");
+
+  delay(1000);
+}</code></pre>
+    </section>
+
+    <section class="secao">
+      <h2>Fabricantes e modelos comerciais</h2>
+      <p>Confira alguns modelos de mercado, de fabricantes distintos:</p>
+      <div class="grade-modelos">
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: HC-SR04 ]</div>
+          <h4>HC-SR04</h4>
+          <span class="fabricante">ElecFreaks e similares</span>
+          <p>Modelo padrão de 5 V, o mais difundido do mercado.</p>
+        </div>
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: HC-SR04P / RCWL-1601 ]</div>
+          <h4>HC-SR04P / RCWL-1601</h4>
+          <span class="fabricante">Diversos fabricantes</span>
+          <p>Versões que operam de 3 V a 5,5 V, compatíveis com ESP32.</p>
+        </div>
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: UB800-18GM40 (ultrassônico industrial) ]</div>
+          <h4>UB800-18GM40 (ultrassônico industrial)</h4>
+          <span class="fabricante">Pepperl+Fuchs / SICK</span>
+          <p>Sensores ultrassônicos industriais IP67 com saída 4–20 mA ou IO-Link.</p>
+        </div>
+      </div>
+    </section>
+
+    <nav class="navegacao-robos">
+      <a href="bh1750.html">&larr; BH1750</a>
+      <a href="../index.html">Voltar ao início</a>
+      <a href="hc-sr501.html">PIR HC-SR501 &rarr;</a>
+    </nav>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Portal <span>Robótica Industrial 4.0</span> &mdash; Catálogo técnico e educativo sobre robôs industriais e IoT.</p>
+    <p>Projeto acadêmico desenvolvido para fins de estudo em Indústria 4.0.</p>
+  </footer>
+
+  <button id="botao-topo" aria-label="Voltar ao topo">&uarr;</button>
+
+  <script src="../js/script.js"></script>
+
+</body>
+</html>

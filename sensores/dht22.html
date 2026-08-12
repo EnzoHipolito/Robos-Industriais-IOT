@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>DHT22 (AM2302) | Portal Robótica Industrial 4.0</title>
+  <meta name="description" content="DHT22 (AM2302): conceito, princípio de funcionamento, especificações técnicas, aplicações industriais e modelos comerciais.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="cabecalho">
+    <nav class="barra-navegacao">
+      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+      <ul class="menu" id="menu-principal">
+        <li><a href="../index.html">In&iacute;cio</a></li>
+        <li><a href="../iot.html">IoT</a></li>
+        <li><a href="../robotica-industrial.html">Rob&oacute;tica Industrial</a></li>
+
+        <li class="item-dropdown">
+          <button class="botao-dropdown" aria-expanded="false" aria-controls="submenu-robos">
+            Rob&ocirc;s <span class="seta">&#9662;</span>
+          </button>
+          <ul class="submenu" id="submenu-robos">
+            <li><a href="../robos/robo-cartesiano.html">Cartesiano</a></li>
+            <li><a href="../robos/robo-scara.html">SCARA</a></li>
+            <li><a href="../robos/robo-articulado.html">Articulado</a></li>
+            <li><a href="../robos/robo-cilindrico.html">Cil&iacute;ndrico</a></li>
+            <li><a href="../robos/robo-delta.html">Delta</a></li>
+            <li><a href="../robos/robo-polar.html">Polar</a></li>
+            <li><a href="../robos/robo-colaborativo.html">Colaborativo (Cobot)</a></li>
+          </ul>
+        </li>
+
+        <li class="item-dropdown">
+          <button class="botao-dropdown" aria-expanded="false" aria-controls="submenu-sensores">
+            Sensores <span class="seta">&#9662;</span>
+          </button>
+          <ul class="submenu" id="submenu-sensores">
+            <li><a href="../sensores/dht22.html">DHT22 &mdash; Temp./Umidade</a></li>
+            <li><a href="../sensores/ds18b20.html">DS18B20 &mdash; Temperatura</a></li>
+            <li><a href="../sensores/bh1750.html">BH1750 &mdash; Luminosidade</a></li>
+            <li><a href="../sensores/hc-sr04.html">HC-SR04 &mdash; Dist&acirc;ncia</a></li>
+            <li><a href="../sensores/hc-sr501.html">PIR HC-SR501 &mdash; Movimento</a></li>
+            <li><a href="../sensores/mq-2.html">MQ-2 &mdash; G&aacute;s e Fuma&ccedil;a</a></li>
+            <li><a href="../sensores/umidade-solo.html">Umidade do Solo (Capacitivo)</a></li>
+            <li><a href="../sensores/yf-s201.html">YF-S201 &mdash; Fluxo de &Aacute;gua</a></li>
+            <li><a href="../sensores/acs712.html">ACS712 &mdash; Corrente</a></li>
+            <li><a href="../sensores/mfrc522.html">MFRC522 &mdash; RFID</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <section class="hero">
+    <span class="selo">Sensor &middot; Temperatura e Umidade</span>
+    <h1>DHT22 (AM2302)</h1>
+    <p>Sensor digital combinado de temperatura e umidade relativa do ar, com maior precisão que o DHT11.</p>
+  </section>
+
+  <main class="conteudo">
+
+    <section class="secao">
+      <h2>Identificação</h2>
+      <div class="ficha-tecnica">
+        <table class="tabela-caracteristicas">
+        <tr><th>Nome do sensor</th><td>DHT22 (AM2302)</td></tr>
+        <tr><th>Categoria</th><td>Temperatura e Umidade</td></tr>
+        <tr><th>Tipo de sinal</th><td>Digital (protocolo proprietário de 1 fio)</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>Conceito</h2>
+      <p>O DHT22, também comercializado como AM2302, é um sensor digital que mede simultaneamente a temperatura e a umidade relativa do ar. Ele reúne, dentro de um único encapsulamento plástico ventilado, um elemento sensor capacitivo de umidade, um termistor NTC e um microcontrolador de 8 bits que realiza toda a conversão e a calibração internamente. Por isso o sensor entrega diretamente um valor já calibrado, dispensando circuitos de condicionamento externos. É a versão mais precisa e de maior faixa de medição da mesma família do popular DHT11.</p>
+      <div class="imagem-ilustrativa">[ Imagem ilustrativa: DHT22 (AM2302) ]</div>
+    </section>
+
+    <section class="secao">
+      <h2>Princípio de funcionamento</h2>
+      <p>O elemento de umidade é um capacitor cujo dielétrico é um polímero que absorve moléculas de água do ambiente. Quanto mais úmido o ar, maior a constante dielétrica e, consequentemente, maior a capacitância medida. Já a temperatura é obtida por um termistor NTC, cuja resistência elétrica diminui conforme a temperatura aumenta. O microcontrolador interno lê os dois elementos, aplica os coeficientes de calibração gravados de fábrica em sua memória OTP e transmite o resultado como um pacote digital de 40 bits (16 bits de umidade, 16 bits de temperatura e 8 bits de checksum) por meio de um único fio de dados.</p>
+    </section>
+
+    <section class="secao">
+      <h2>Principais especificações técnicas</h2>
+      <div class="ficha-tecnica">
+        <table class="tabela-caracteristicas">
+        <tr><th>Faixa de temperatura</th><td>-40 °C a +80 °C</td></tr>
+        <tr><th>Precisão da temperatura</th><td>±0,5 °C</td></tr>
+        <tr><th>Faixa de umidade</th><td>0% a 100% de umidade relativa (UR)</td></tr>
+        <tr><th>Precisão da umidade</th><td>±2% UR (típica); até ±5% nos extremos</td></tr>
+        <tr><th>Resolução</th><td>0,1 °C e 0,1% UR (16 bits)</td></tr>
+        <tr><th>Tensão de alimentação</th><td>3,3 V a 6 V CC</td></tr>
+        <tr><th>Corrente de operação</th><td>1 mA a 1,5 mA (cerca de 50 µA em repouso)</td></tr>
+        <tr><th>Taxa de amostragem</th><td>0,5 Hz (uma leitura a cada 2 segundos)</td></tr>
+        <tr><th>Distância máxima do cabo</th><td>Até 20 m com resistor de pull-up adequado</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>Tipo de sinal</h2>
+      <div class="caixa-destaque">
+        <p><strong>Digital (protocolo proprietário de 1 fio)</strong></p>
+      </div>
+      <p>O DHT22 usa um barramento digital de fio único (single-wire), semelhante ao 1-Wire, porém com temporização proprietária. O microcontrolador envia um pulso de início mantendo a linha em nível baixo por ao menos 1 ms; o sensor responde e transmite os 40 bits codificando cada bit pela duração do pulso em nível alto (cerca de 26–28 µs para o bit 0 e 70 µs para o bit 1). A linha de dados precisa de um resistor de pull-up de 4,7 kΩ a 10 kΩ ligado ao VCC. Por não ser um barramento endereçável, cada sensor exige um pino digital exclusivo do microcontrolador.</p>
+    </section>
+
+    <section class="secao">
+      <h2>Aplicações industriais e IoT</h2>
+      <ul>
+        <li>Monitoramento do clima interno de galpões, almoxarifados e salas de servidores;</li>
+        <li>Controle de umidade em estufas e na agricultura de precisão;</li>
+        <li>Supervisão de câmaras frias e de cadeias de frio na indústria alimentícia;</li>
+        <li>Estações meteorológicas conectadas e projetos de cidades inteligentes;</li>
+        <li>Monitoramento ambiental de painéis elétricos e quadros de automação;</li>
+        <li>Registro de condições de armazenagem de matérias-primas sensíveis à umidade.</li>
+      </ul>
+    </section>
+
+    <section class="secao">
+      <h2>Exemplo de utilização em um projeto</h2>
+      <p>Em uma célula robotizada, o DHT22 pode ser instalado dentro do painel elétrico que abriga o controlador do robô. Um ESP32 lê a temperatura e a umidade a cada 30 segundos e publica os valores em um broker MQTT. Se a temperatura ultrapassar 45 °C ou a umidade passar de 70% (risco de condensação nas placas), o sistema aciona um alerta no dashboard de manutenção e liga o exaustor do painel por meio de um relé.</p>
+      <pre class="bloco-codigo"><code>#include &lt;DHT.h&gt;
+
+#define PINO_DHT 4
+DHT dht(PINO_DHT, DHT22);
+
+void setup() {
+  Serial.begin(115200);
+  dht.begin();
+}
+
+void loop() {
+  float umidade = dht.readHumidity();
+  float temperatura = dht.readTemperature();
+
+  if (isnan(umidade) || isnan(temperatura)) {
+    Serial.println("Falha na leitura do sensor DHT22");
+  } else {
+    Serial.printf("Temperatura: %.1f C | Umidade: %.1f %%\n",
+                  temperatura, umidade);
+  }
+
+  delay(30000);  // respeita a taxa maxima de 0,5 Hz
+}</code></pre>
+    </section>
+
+    <section class="secao">
+      <h2>Fabricantes e modelos comerciais</h2>
+      <p>Confira alguns modelos de mercado, de fabricantes distintos:</p>
+      <div class="grade-modelos">
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: Aosong AM2302 ]</div>
+          <h4>Aosong AM2302</h4>
+          <span class="fabricante">Aosong (ASAIR)</span>
+          <p>Versão original do sensor, com fio e conector já montados.</p>
+        </div>
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: DHT22 / RHT03 ]</div>
+          <h4>DHT22 / RHT03</h4>
+          <span class="fabricante">Sparkfun / Maxdetect</span>
+          <p>Mesma pastilha sensora revendida por diversos distribuidores.</p>
+        </div>
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: Sensirion SHT31-D ]</div>
+          <h4>Sensirion SHT31-D</h4>
+          <span class="fabricante">Sensirion</span>
+          <p>Alternativa I2C de precisão superior (±0,3 °C) para uso industrial.</p>
+        </div>
+      </div>
+    </section>
+
+    <nav class="navegacao-robos">
+      <a href="../index.html">&larr; Início</a>
+      <a href="../index.html">Voltar ao início</a>
+      <a href="ds18b20.html">DS18B20 &rarr;</a>
+    </nav>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Portal <span>Robótica Industrial 4.0</span> &mdash; Catálogo técnico e educativo sobre robôs industriais e IoT.</p>
+    <p>Projeto acadêmico desenvolvido para fins de estudo em Indústria 4.0.</p>
+  </footer>
+
+  <button id="botao-topo" aria-label="Voltar ao topo">&uarr;</button>
+
+  <script src="../js/script.js"></script>
+
+</body>
+</html>

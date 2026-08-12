@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ACS712 | Portal Robótica Industrial 4.0</title>
+  <meta name="description" content="ACS712: conceito, princípio de funcionamento, especificações técnicas, aplicações industriais e modelos comerciais.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="cabecalho">
+    <nav class="barra-navegacao">
+      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+      <ul class="menu" id="menu-principal">
+        <li><a href="../index.html">In&iacute;cio</a></li>
+        <li><a href="../iot.html">IoT</a></li>
+        <li><a href="../robotica-industrial.html">Rob&oacute;tica Industrial</a></li>
+
+        <li class="item-dropdown">
+          <button class="botao-dropdown" aria-expanded="false" aria-controls="submenu-robos">
+            Rob&ocirc;s <span class="seta">&#9662;</span>
+          </button>
+          <ul class="submenu" id="submenu-robos">
+            <li><a href="../robos/robo-cartesiano.html">Cartesiano</a></li>
+            <li><a href="../robos/robo-scara.html">SCARA</a></li>
+            <li><a href="../robos/robo-articulado.html">Articulado</a></li>
+            <li><a href="../robos/robo-cilindrico.html">Cil&iacute;ndrico</a></li>
+            <li><a href="../robos/robo-delta.html">Delta</a></li>
+            <li><a href="../robos/robo-polar.html">Polar</a></li>
+            <li><a href="../robos/robo-colaborativo.html">Colaborativo (Cobot)</a></li>
+          </ul>
+        </li>
+
+        <li class="item-dropdown">
+          <button class="botao-dropdown" aria-expanded="false" aria-controls="submenu-sensores">
+            Sensores <span class="seta">&#9662;</span>
+          </button>
+          <ul class="submenu" id="submenu-sensores">
+            <li><a href="../sensores/dht22.html">DHT22 &mdash; Temp./Umidade</a></li>
+            <li><a href="../sensores/ds18b20.html">DS18B20 &mdash; Temperatura</a></li>
+            <li><a href="../sensores/bh1750.html">BH1750 &mdash; Luminosidade</a></li>
+            <li><a href="../sensores/hc-sr04.html">HC-SR04 &mdash; Dist&acirc;ncia</a></li>
+            <li><a href="../sensores/hc-sr501.html">PIR HC-SR501 &mdash; Movimento</a></li>
+            <li><a href="../sensores/mq-2.html">MQ-2 &mdash; G&aacute;s e Fuma&ccedil;a</a></li>
+            <li><a href="../sensores/umidade-solo.html">Umidade do Solo (Capacitivo)</a></li>
+            <li><a href="../sensores/yf-s201.html">YF-S201 &mdash; Fluxo de &Aacute;gua</a></li>
+            <li><a href="../sensores/acs712.html">ACS712 &mdash; Corrente</a></li>
+            <li><a href="../sensores/mfrc522.html">MFRC522 &mdash; RFID</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <section class="hero">
+    <span class="selo">Sensor &middot; Corrente Elétrica</span>
+    <h1>ACS712</h1>
+    <p>Sensor de corrente por efeito Hall com isolação galvânica, para medir corrente contínua e alternada.</p>
+  </section>
+
+  <main class="conteudo">
+
+    <section class="secao">
+      <h2>Identificação</h2>
+      <div class="ficha-tecnica">
+        <table class="tabela-caracteristicas">
+        <tr><th>Nome do sensor</th><td>ACS712</td></tr>
+        <tr><th>Categoria</th><td>Corrente Elétrica</td></tr>
+        <tr><th>Tipo de sinal</th><td>Analógico (tensão contínua centrada em VCC/2)</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>Conceito</h2>
+      <p>O ACS712 é um sensor de corrente linear fabricado pela Allegro MicroSystems que mede tanto corrente contínua quanto alternada utilizando o efeito Hall. Sua característica mais importante é a isolação galvânica: o caminho por onde circula a corrente medida é fisicamente separado da eletrônica de saída, suportando cerca de 2,1 kV eficazes. Isso permite que um microcontrolador de 5 V monitore com segurança cargas ligadas à rede elétrica. Comparado ao uso de resistores <em>shunt</em>, ele tem a vantagem de introduzir uma perda mínima no circuito, pois a resistência interna do condutor é de apenas 1,2 mΩ.</p>
+      <div class="imagem-ilustrativa">[ Imagem ilustrativa: ACS712 ]</div>
+    </section>
+
+    <section class="secao">
+      <h2>Princípio de funcionamento</h2>
+      <p>A corrente a ser medida percorre um condutor de cobre interno ao encapsulamento. Toda corrente elétrica gera ao seu redor um campo magnético proporcional à sua intensidade, conforme a lei de Ampère. Um elemento Hall integrado ao silício, posicionado logo abaixo desse condutor, converte o campo magnético em uma tensão proporcional. Essa tensão é amplificada, filtrada e disponibilizada na saída analógica. Como o sensor precisa representar correntes nos dois sentidos, sua saída é centrada em metade da tensão de alimentação (2,5 V em 5 V) na ausência de corrente: valores acima indicam corrente em um sentido e abaixo, no sentido oposto. A saída é ratiométrica, ou seja, acompanha proporcionalmente variações da tensão de alimentação.</p>
+    </section>
+
+    <section class="secao">
+      <h2>Principais especificações técnicas</h2>
+      <div class="ficha-tecnica">
+        <table class="tabela-caracteristicas">
+        <tr><th>Versões disponíveis</th><td>±5 A, ±20 A e ±30 A</td></tr>
+        <tr><th>Sensibilidade</th><td>185 mV/A (5 A), 100 mV/A (20 A) e 66 mV/A (30 A)</td></tr>
+        <tr><th>Tensão de alimentação</th><td>5 V CC</td></tr>
+        <tr><th>Tensão de saída em repouso</th><td>VCC/2, ou seja, cerca de 2,5 V</td></tr>
+        <tr><th>Isolação galvânica</th><td>2,1 kV eficazes (RMS)</td></tr>
+        <tr><th>Resistência interna do condutor</th><td>1,2 mΩ</td></tr>
+        <tr><th>Largura de banda</th><td>Até 80 kHz</td></tr>
+        <tr><th>Erro total de saída</th><td>Cerca de 1,5% a 25 °C</td></tr>
+        <tr><th>Tempo de resposta</th><td>Aproximadamente 5 µs</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>Tipo de sinal</h2>
+      <div class="caixa-destaque">
+        <p><strong>Analógico (tensão contínua centrada em VCC/2)</strong></p>
+      </div>
+      <p>A saída é analógica e deve ser lida por uma entrada ADC. Para corrente contínua, basta subtrair o valor de repouso (offset) da leitura e dividir pela sensibilidade da versão utilizada. Já para corrente alternada, uma única amostra não tem significado: é preciso amostrar o sinal ao longo de vários ciclos completos da rede e calcular o valor eficaz (RMS) pela raiz da média dos quadrados. Recomenda-se sempre medir e armazenar o offset real com a carga desligada, pois ele varia de peça para peça. Em placas de 3,3 V, é necessário um divisor de tensão na saída, já que o sensor é alimentado em 5 V.</p>
+    </section>
+
+    <section class="secao">
+      <h2>Aplicações industriais e IoT</h2>
+      <ul>
+        <li>Monitoramento de consumo de energia de motores e máquinas;</li>
+        <li>Detecção de sobrecarga, travamento de rotor e falta de fase;</li>
+        <li>Manutenção preditiva pela análise da assinatura de corrente do motor;</li>
+        <li>Proteção de acionamentos e de fontes de alimentação;</li>
+        <li>Medição de carga e descarga de baterias e sistemas fotovoltaicos;</li>
+        <li>Submedição de consumo por máquina em programas de eficiência energética.</li>
+      </ul>
+    </section>
+
+    <section class="secao">
+      <h2>Exemplo de utilização em um projeto</h2>
+      <p>Para acompanhar a saúde do motor do eixo principal de um robô cartesiano, um ACS712 de 20 A é instalado em série com a alimentação do acionamento. O microcontrolador calcula a corrente eficaz a cada ciclo de trabalho e a compara com o perfil histórico daquela mesma operação. Um aumento progressivo da corrente para o mesmo movimento sugere aumento de atrito por falta de lubrificação ou desalinhamento mecânico. Os valores são publicados em um painel de manutenção preditiva que emite um aviso quando a corrente média do dia supera em 15% a linha de base registrada logo após a última manutenção.</p>
+      <pre class="bloco-codigo"><code>const int PINO_ACS = A0;
+const float SENSIBILIDADE = 0.100;   // 100 mV/A (versao de 20 A)
+float offset = 2.5;                  // medido com a carga desligada
+
+float lerCorrenteRMS() {
+  float soma = 0;
+  const int AMOSTRAS = 1000;
+
+  for (int i = 0; i &lt; AMOSTRAS; i++) {
+    float tensao = analogRead(PINO_ACS) * 5.0 / 1023.0;
+    float corrente = (tensao - offset) / SENSIBILIDADE;
+    soma += corrente * corrente;     // acumula o quadrado
+    delayMicroseconds(100);
+  }
+
+  return sqrt(soma / AMOSTRAS);      // valor eficaz
+}
+
+void setup() {
+  Serial.begin(9600);
+  // calibra o offset com a carga desligada
+  long bruto = 0;
+  for (int i = 0; i &lt; 500; i++) bruto += analogRead(PINO_ACS);
+  offset = (bruto / 500.0) * 5.0 / 1023.0;
+}
+
+void loop() {
+  Serial.print("Corrente: ");
+  Serial.print(lerCorrenteRMS());
+  Serial.println(" A");
+  delay(2000);
+}</code></pre>
+    </section>
+
+    <section class="secao">
+      <h2>Fabricantes e modelos comerciais</h2>
+      <p>Confira alguns modelos de mercado, de fabricantes distintos:</p>
+      <div class="grade-modelos">
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: ACS712ELCTR-20A-T ]</div>
+          <h4>ACS712ELCTR-20A-T</h4>
+          <span class="fabricante">Allegro MicroSystems</span>
+          <p>Versão de ±20 A, a mais usada em módulos didáticos.</p>
+        </div>
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: ACS758 / ACS37800 ]</div>
+          <h4>ACS758 / ACS37800</h4>
+          <span class="fabricante">Allegro MicroSystems</span>
+          <p>Modelos para correntes maiores e com medição digital de energia.</p>
+        </div>
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: SCT-013 (transformador de corrente) ]</div>
+          <h4>SCT-013 (transformador de corrente)</h4>
+          <span class="fabricante">YHDC</span>
+          <p>Alternativa não invasiva do tipo alicate, apenas para corrente alternada.</p>
+        </div>
+      </div>
+    </section>
+
+    <nav class="navegacao-robos">
+      <a href="yf-s201.html">&larr; YF-S201</a>
+      <a href="../index.html">Voltar ao início</a>
+      <a href="mfrc522.html">MFRC522 &rarr;</a>
+    </nav>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Portal <span>Robótica Industrial 4.0</span> &mdash; Catálogo técnico e educativo sobre robôs industriais e IoT.</p>
+    <p>Projeto acadêmico desenvolvido para fins de estudo em Indústria 4.0.</p>
+  </footer>
+
+  <button id="botao-topo" aria-label="Voltar ao topo">&uarr;</button>
+
+  <script src="../js/script.js"></script>
+
+</body>
+</html>

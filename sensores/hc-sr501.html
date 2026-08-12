@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>PIR HC-SR501 | Portal Robótica Industrial 4.0</title>
+  <meta name="description" content="PIR HC-SR501: conceito, princípio de funcionamento, especificações técnicas, aplicações industriais e modelos comerciais.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="cabecalho">
+    <nav class="barra-navegacao">
+      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+      <ul class="menu" id="menu-principal">
+        <li><a href="../index.html">In&iacute;cio</a></li>
+        <li><a href="../iot.html">IoT</a></li>
+        <li><a href="../robotica-industrial.html">Rob&oacute;tica Industrial</a></li>
+
+        <li class="item-dropdown">
+          <button class="botao-dropdown" aria-expanded="false" aria-controls="submenu-robos">
+            Rob&ocirc;s <span class="seta">&#9662;</span>
+          </button>
+          <ul class="submenu" id="submenu-robos">
+            <li><a href="../robos/robo-cartesiano.html">Cartesiano</a></li>
+            <li><a href="../robos/robo-scara.html">SCARA</a></li>
+            <li><a href="../robos/robo-articulado.html">Articulado</a></li>
+            <li><a href="../robos/robo-cilindrico.html">Cil&iacute;ndrico</a></li>
+            <li><a href="../robos/robo-delta.html">Delta</a></li>
+            <li><a href="../robos/robo-polar.html">Polar</a></li>
+            <li><a href="../robos/robo-colaborativo.html">Colaborativo (Cobot)</a></li>
+          </ul>
+        </li>
+
+        <li class="item-dropdown">
+          <button class="botao-dropdown" aria-expanded="false" aria-controls="submenu-sensores">
+            Sensores <span class="seta">&#9662;</span>
+          </button>
+          <ul class="submenu" id="submenu-sensores">
+            <li><a href="../sensores/dht22.html">DHT22 &mdash; Temp./Umidade</a></li>
+            <li><a href="../sensores/ds18b20.html">DS18B20 &mdash; Temperatura</a></li>
+            <li><a href="../sensores/bh1750.html">BH1750 &mdash; Luminosidade</a></li>
+            <li><a href="../sensores/hc-sr04.html">HC-SR04 &mdash; Dist&acirc;ncia</a></li>
+            <li><a href="../sensores/hc-sr501.html">PIR HC-SR501 &mdash; Movimento</a></li>
+            <li><a href="../sensores/mq-2.html">MQ-2 &mdash; G&aacute;s e Fuma&ccedil;a</a></li>
+            <li><a href="../sensores/umidade-solo.html">Umidade do Solo (Capacitivo)</a></li>
+            <li><a href="../sensores/yf-s201.html">YF-S201 &mdash; Fluxo de &Aacute;gua</a></li>
+            <li><a href="../sensores/acs712.html">ACS712 &mdash; Corrente</a></li>
+            <li><a href="../sensores/mfrc522.html">MFRC522 &mdash; RFID</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <section class="hero">
+    <span class="selo">Sensor &middot; Movimento / Presença</span>
+    <h1>PIR HC-SR501</h1>
+    <p>Sensor infravermelho passivo que detecta a movimentação de pessoas e animais pelo calor corporal.</p>
+  </section>
+
+  <main class="conteudo">
+
+    <section class="secao">
+      <h2>Identificação</h2>
+      <div class="ficha-tecnica">
+        <table class="tabela-caracteristicas">
+        <tr><th>Nome do sensor</th><td>PIR HC-SR501</td></tr>
+        <tr><th>Categoria</th><td>Movimento / Presença</td></tr>
+        <tr><th>Tipo de sinal</th><td>Digital (saída ON/OFF em nível lógico)</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>Conceito</h2>
+      <p>O HC-SR501 é um módulo sensor de movimento do tipo PIR (Passive Infrared, ou infravermelho passivo). O termo "passivo" indica que ele não emite nenhum tipo de radiação: apenas capta a radiação infravermelha naturalmente emitida por corpos aquecidos, como pessoas e animais. A cúpula branca que o caracteriza é uma lente de Fresnel, responsável por dividir o campo de visão em várias zonas e concentrar o infravermelho sobre o elemento sensor. É importante entender que o PIR detecta <em>variação</em> de calor, ou seja, movimento — um corpo completamente parado deixa de ser detectado após alguns instantes.</p>
+      <div class="imagem-ilustrativa">[ Imagem ilustrativa: PIR HC-SR501 ]</div>
+    </section>
+
+    <section class="secao">
+      <h2>Princípio de funcionamento</h2>
+      <p>O elemento piroelétrico interno é dividido em dois segmentos ligados em oposição. Quando o ambiente está estável, ambos recebem a mesma quantidade de radiação infravermelha e a diferença de sinal é nula. Ao passar por uma das zonas criadas pela lente de Fresnel, um corpo quente aquece primeiro um segmento e depois o outro, gerando um pulso elétrico diferencial. Esse sinal é amplificado e comparado por um circuito integrado dedicado (normalmente o BISS0001), que aciona a saída digital em nível alto durante o tempo definido no potenciômetro de retardo. O arranjo diferencial também torna o sensor imune a variações lentas e uniformes de temperatura do ambiente.</p>
+    </section>
+
+    <section class="secao">
+      <h2>Principais especificações técnicas</h2>
+      <div class="ficha-tecnica">
+        <table class="tabela-caracteristicas">
+        <tr><th>Alcance de detecção</th><td>3 m a 7 m, ajustável por potenciômetro</td></tr>
+        <tr><th>Ângulo de detecção</th><td>Aproximadamente 110° a 120°</td></tr>
+        <tr><th>Tensão de alimentação</th><td>4,5 V a 20 V CC</td></tr>
+        <tr><th>Tensão de saída</th><td>3,3 V em nível alto / 0 V em nível baixo</td></tr>
+        <tr><th>Consumo em repouso</th><td>Menor que 50 µA</td></tr>
+        <tr><th>Tempo de retardo (Tx)</th><td>Ajustável de 0,3 s a cerca de 5 minutos</td></tr>
+        <tr><th>Tempo de bloqueio</th><td>Cerca de 2,5 s entre detecções</td></tr>
+        <tr><th>Modos de disparo</th><td>H (repetitivo) e L (não repetitivo), via jumper</td></tr>
+        <tr><th>Tempo de aquecimento</th><td>30 s a 60 s após ser energizado</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>Tipo de sinal</h2>
+      <div class="caixa-destaque">
+        <p><strong>Digital (saída ON/OFF em nível lógico)</strong></p>
+      </div>
+      <p>A saída do HC-SR501 é puramente digital e binária: nível alto (3,3 V) quando há movimento detectado e nível baixo quando não há. Como já entrega um sinal lógico condicionado, pode ser lida por qualquer pino digital de entrada, sem componentes adicionais, e é ideal para uso com interrupções externas — o microcontrolador permanece em modo de baixo consumo e é despertado apenas quando ocorre a detecção. No modo H, o temporizador é reiniciado a cada novo movimento, mantendo a saída ativa enquanto houver atividade; no modo L, a saída desliga ao fim do tempo ajustado, mesmo que o movimento continue.</p>
+    </section>
+
+    <section class="secao">
+      <h2>Aplicações industriais e IoT</h2>
+      <ul>
+        <li>Acionamento automático de iluminação em corredores, banheiros e depósitos;</li>
+        <li>Sistemas de alarme e de segurança patrimonial;</li>
+        <li>Detecção de invasão de áreas restritas e de células robotizadas;</li>
+        <li>Contagem aproximada de fluxo de pessoas em ambientes comerciais;</li>
+        <li>Economia de energia em ar-condicionado e equipamentos de escritório;</li>
+        <li>Automação residencial e predial conectada (IoT).</li>
+      </ul>
+    </section>
+
+    <section class="secao">
+      <h2>Exemplo de utilização em um projeto</h2>
+      <p>Ao redor de uma célula de solda robotizada, sensores HC-SR501 monitoram a zona de segurança delimitada por grades. Se alguém entrar na área enquanto o robô está em ciclo, o módulo coloca a saída em nível alto, o microcontrolador dispara uma interrupção externa e envia imediatamente um comando de parada segura ao CLP, além de acionar uma sirene e registrar o evento com data e hora em um servidor. O registro histórico permite auditar quantas vezes a área foi invadida e em quais turnos, apoiando ações de treinamento em segurança do trabalho.</p>
+      <pre class="bloco-codigo"><code>const int PINO_PIR = 2;
+const int PINO_SIRENE = 8;
+volatile bool invasaoDetectada = false;
+
+void aoDetectarMovimento() {
+  invasaoDetectada = true;
+}
+
+void setup() {
+  Serial.begin(9600);
+  pinMode(PINO_PIR, INPUT);
+  pinMode(PINO_SIRENE, OUTPUT);
+  attachInterrupt(digitalPinToInterrupt(PINO_PIR),
+                  aoDetectarMovimento, RISING);
+  delay(60000);                    // aquecimento do sensor PIR
+  Serial.println("Zona de seguranca monitorada.");
+}
+
+void loop() {
+  if (invasaoDetectada) {
+    invasaoDetectada = false;
+    digitalWrite(PINO_SIRENE, HIGH);
+    Serial.println("ALERTA: presenca na zona de seguranca!");
+    delay(5000);
+    digitalWrite(PINO_SIRENE, LOW);
+  }
+}</code></pre>
+    </section>
+
+    <section class="secao">
+      <h2>Fabricantes e modelos comerciais</h2>
+      <p>Confira alguns modelos de mercado, de fabricantes distintos:</p>
+      <div class="grade-modelos">
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: HC-SR501 ]</div>
+          <h4>HC-SR501</h4>
+          <span class="fabricante">Diversos fabricantes (CI BISS0001)</span>
+          <p>Módulo padrão com ajustes de sensibilidade e tempo.</p>
+        </div>
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: HC-SR505 / AM312 ]</div>
+          <h4>HC-SR505 / AM312</h4>
+          <span class="fabricante">Diversos fabricantes</span>
+          <p>Versões miniaturizadas, com saída de 3,3 V e menor consumo.</p>
+        </div>
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: Panasonic EKMB (série PaPIRs) ]</div>
+          <h4>Panasonic EKMB (série PaPIRs)</h4>
+          <span class="fabricante">Panasonic</span>
+          <p>Sensores PIR de qualidade industrial, com baixíssimo consumo.</p>
+        </div>
+      </div>
+    </section>
+
+    <nav class="navegacao-robos">
+      <a href="hc-sr04.html">&larr; HC-SR04</a>
+      <a href="../index.html">Voltar ao início</a>
+      <a href="mq-2.html">MQ-2 &rarr;</a>
+    </nav>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Portal <span>Robótica Industrial 4.0</span> &mdash; Catálogo técnico e educativo sobre robôs industriais e IoT.</p>
+    <p>Projeto acadêmico desenvolvido para fins de estudo em Indústria 4.0.</p>
+  </footer>
+
+  <button id="botao-topo" aria-label="Voltar ao topo">&uarr;</button>
+
+  <script src="../js/script.js"></script>
+
+</body>
+</html>

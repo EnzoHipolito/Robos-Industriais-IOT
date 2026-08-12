@@ -80,6 +80,76 @@ a {
   border-bottom-color: #ff7a00;
 }
 
+/* MENU SUSPENSO (DROPDOWN) */
+
+.item-dropdown {
+  position: relative;
+}
+
+.botao-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  background: none;
+  border: none;
+  color: white;
+  font-family: inherit;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0.4rem 0;
+  border-bottom: 2px solid transparent;
+  transition: border-color 0.2s;
+}
+
+.botao-dropdown:hover,
+.botao-dropdown.ativo,
+.item-dropdown.aberto .botao-dropdown {
+  border-bottom-color: #ff7a00;
+}
+
+.seta {
+  font-size: 0.7rem;
+  transition: transform 0.2s;
+}
+
+.item-dropdown.aberto .seta {
+  transform: rotate(180deg);
+}
+
+.submenu {
+  display: none;
+  position: absolute;
+  top: calc(100% + 1rem);
+  left: 0;
+  min-width: 230px;
+  list-style: none;
+  background-color: #13315c;
+  border-top: 3px solid #ff7a00;
+  border-radius: 0 0 6px 6px;
+  padding: 0.4rem 0;
+  box-shadow: 0 5px 15px rgba(0,0,0,0.25);
+  z-index: 200;
+}
+
+.item-dropdown.aberto .submenu {
+  display: block;
+}
+
+.submenu a {
+  display: block;
+  padding: 0.5rem 1rem;
+  font-size: 0.9rem;
+  border-bottom: none;
+  border-left: 3px solid transparent;
+}
+
+.submenu a:hover,
+.submenu a.ativo {
+  background-color: #0b2545;
+  border-left-color: #ff7a00;
+  border-bottom: none;
+}
+
 /* HERO */
 
 .hero {
@@ -150,14 +220,16 @@ a {
 
 /* CARDS */
 
-.grade-robos {
+.grade-robos,
+.grade-sensores {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 1.2rem;
   margin-top: 1.5rem;
 }
 
-.card-robo {
+.card-robo,
+.card-sensor {
   background-color: white;
   border-radius: 8px;
   box-shadow: 0 2px 8px rgba(0,0,0,0.1);
@@ -165,9 +237,31 @@ a {
   transition: transform 0.2s, box-shadow 0.2s;
 }
 
-.card-robo:hover {
+.card-robo:hover,
+.card-sensor:hover {
   transform: translateY(-5px);
   box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+}
+
+.card-sensor h3 {
+  color: #0b2545;
+  margin: 0 0 0.2rem;
+  font-size: 1rem;
+}
+
+.card-sensor .categoria {
+  display: block;
+  font-size: 0.75rem;
+  color: #ff7a00;
+  font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.4rem;
+}
+
+.card-sensor p {
+  font-size: 0.9rem;
+  color: #666;
 }
 
 .imagem-placeholder {
@@ -242,6 +336,20 @@ a {
   color: #0b2545;
   font-weight: bold;
   width: 40%;
+}
+
+/* BLOCO DE CÓDIGO */
+
+.bloco-codigo {
+  background-color: #0b2545;
+  color: #d7deea;
+  border-radius: 8px;
+  padding: 1rem;
+  margin: 1rem 0;
+  overflow-x: auto;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.85rem;
+  line-height: 1.5;
 }
 
 /* MODELOS */
@@ -402,6 +510,8 @@ a {
     top: 50px;
     left: 0;
     right: 0;
+    max-height: calc(100vh - 60px);
+    overflow-y: auto;
   }
 
   .menu.aberto {
@@ -426,6 +536,41 @@ a {
     border-bottom: none;
   }
 
+  .item-dropdown {
+    width: 100%;
+  }
+
+  .botao-dropdown {
+    width: 100%;
+    justify-content: space-between;
+    padding: 0.8rem 1.5rem;
+    border-bottom: none;
+    border-left: 3px solid transparent;
+  }
+
+  .botao-dropdown:hover,
+  .botao-dropdown.ativo,
+  .item-dropdown.aberto .botao-dropdown {
+    background-color: #0b2545;
+    border-left-color: #ff7a00;
+    border-bottom: none;
+  }
+
+  .submenu {
+    position: static;
+    min-width: 0;
+    background-color: #0b2545;
+    border-top: none;
+    border-radius: 0;
+    box-shadow: none;
+    padding: 0;
+  }
+
+  .submenu a {
+    padding: 0.7rem 1.5rem 0.7rem 2.5rem;
+    font-size: 0.85rem;
+  }
+
   .barra-navegacao {
     flex-wrap: wrap;
   }
@@ -434,7 +579,8 @@ a {
     font-size: 1.5rem;
   }
 
-  .grade-robos {
+  .grade-robos,
+  .grade-sensores {
     grid-template-columns: 1fr;
   }
 }

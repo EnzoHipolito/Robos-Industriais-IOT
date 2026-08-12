@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sensor Capacitivo de Umidade do Solo | Portal Robótica Industrial 4.0</title>
+  <meta name="description" content="Sensor Capacitivo de Umidade do Solo: conceito, princípio de funcionamento, especificações técnicas, aplicações industriais e modelos comerciais.">
+  <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+
+  <header class="cabecalho">
+    <nav class="barra-navegacao">
+      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+      <ul class="menu" id="menu-principal">
+        <li><a href="../index.html">In&iacute;cio</a></li>
+        <li><a href="../iot.html">IoT</a></li>
+        <li><a href="../robotica-industrial.html">Rob&oacute;tica Industrial</a></li>
+
+        <li class="item-dropdown">
+          <button class="botao-dropdown" aria-expanded="false" aria-controls="submenu-robos">
+            Rob&ocirc;s <span class="seta">&#9662;</span>
+          </button>
+          <ul class="submenu" id="submenu-robos">
+            <li><a href="../robos/robo-cartesiano.html">Cartesiano</a></li>
+            <li><a href="../robos/robo-scara.html">SCARA</a></li>
+            <li><a href="../robos/robo-articulado.html">Articulado</a></li>
+            <li><a href="../robos/robo-cilindrico.html">Cil&iacute;ndrico</a></li>
+            <li><a href="../robos/robo-delta.html">Delta</a></li>
+            <li><a href="../robos/robo-polar.html">Polar</a></li>
+            <li><a href="../robos/robo-colaborativo.html">Colaborativo (Cobot)</a></li>
+          </ul>
+        </li>
+
+        <li class="item-dropdown">
+          <button class="botao-dropdown" aria-expanded="false" aria-controls="submenu-sensores">
+            Sensores <span class="seta">&#9662;</span>
+          </button>
+          <ul class="submenu" id="submenu-sensores">
+            <li><a href="../sensores/dht22.html">DHT22 &mdash; Temp./Umidade</a></li>
+            <li><a href="../sensores/ds18b20.html">DS18B20 &mdash; Temperatura</a></li>
+            <li><a href="../sensores/bh1750.html">BH1750 &mdash; Luminosidade</a></li>
+            <li><a href="../sensores/hc-sr04.html">HC-SR04 &mdash; Dist&acirc;ncia</a></li>
+            <li><a href="../sensores/hc-sr501.html">PIR HC-SR501 &mdash; Movimento</a></li>
+            <li><a href="../sensores/mq-2.html">MQ-2 &mdash; G&aacute;s e Fuma&ccedil;a</a></li>
+            <li><a href="../sensores/umidade-solo.html">Umidade do Solo (Capacitivo)</a></li>
+            <li><a href="../sensores/yf-s201.html">YF-S201 &mdash; Fluxo de &Aacute;gua</a></li>
+            <li><a href="../sensores/acs712.html">ACS712 &mdash; Corrente</a></li>
+            <li><a href="../sensores/mfrc522.html">MFRC522 &mdash; RFID</a></li>
+          </ul>
+        </li>
+      </ul>
+    </nav>
+  </header>
+
+
+  <section class="hero">
+    <span class="selo">Sensor &middot; Umidade</span>
+    <h1>Sensor Capacitivo de Umidade do Solo</h1>
+    <p>Sonda capacitiva resistente à corrosão para medição do teor de água no solo em agricultura inteligente.</p>
+  </section>
+
+  <main class="conteudo">
+
+    <section class="secao">
+      <h2>Identificação</h2>
+      <div class="ficha-tecnica">
+        <table class="tabela-caracteristicas">
+        <tr><th>Nome do sensor</th><td>Sensor Capacitivo de Umidade do Solo</td></tr>
+        <tr><th>Categoria</th><td>Umidade</td></tr>
+        <tr><th>Tipo de sinal</th><td>Analógico (tensão contínua proporcional à umidade)</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>Conceito</h2>
+      <p>O sensor capacitivo de umidade do solo — cuja versão mais conhecida é a placa v1.2 — mede indiretamente o teor de água presente no solo. Ele foi criado para substituir os antigos sensores resistivos, que possuem dois eletrodos metálicos expostos e, por conduzirem corrente diretamente através da terra úmida, sofrem oxidação e eletrólise, degradando-se em poucas semanas. No sensor capacitivo, as trilhas condutoras ficam completamente cobertas pela máscara isolante da placa, de modo que não há contato elétrico com o solo. Isso garante vida útil muito maior e leituras mais estáveis ao longo do tempo, tornando-o o padrão em projetos de agricultura de precisão e irrigação automatizada.</p>
+      <div class="imagem-ilustrativa">[ Imagem ilustrativa: Sensor Capacitivo de Umidade do Solo ]</div>
+    </section>
+
+    <section class="secao">
+      <h2>Princípio de funcionamento</h2>
+      <p>O sensor forma um capacitor no qual as trilhas de cobre da placa funcionam como armaduras e o solo ao redor atua como dielétrico. A água possui constante dielétrica muito alta (cerca de 80), enquanto o solo seco e o ar têm valores bem baixos (entre 1 e 5). Assim, quanto mais úmido o solo, maior a capacitância resultante. Um oscilador integrado na própria placa — normalmente um circuito baseado no temporizador 555 operando em torno de 1,5 MHz — gera um sinal cuja frequência varia com essa capacitância. Um circuito retificador converte a variação de frequência em uma tensão contínua, que é lida pela entrada analógica do microcontrolador. Um detalhe importante: a leitura é <strong>inversamente proporcional</strong> à umidade, ou seja, valores altos indicam solo seco.</p>
+    </section>
+
+    <section class="secao">
+      <h2>Principais especificações técnicas</h2>
+      <div class="ficha-tecnica">
+        <table class="tabela-caracteristicas">
+        <tr><th>Tensão de alimentação</th><td>3,3 V a 5,5 V CC</td></tr>
+        <tr><th>Tensão de saída</th><td>0 V a 3,0 V (aproximadamente, conforme a alimentação)</td></tr>
+        <tr><th>Consumo</th><td>Cerca de 5 mA</td></tr>
+        <tr><th>Comprimento da sonda</th><td>Aproximadamente 98 mm de área útil de inserção</td></tr>
+        <tr><th>Princípio</th><td>Capacitivo, sem contato elétrico com o solo</td></tr>
+        <tr><th>Frequência do oscilador</th><td>Cerca de 1,5 MHz</td></tr>
+        <tr><th>Calibração</th><td>Necessária: registrar o valor em ar seco e em água</td></tr>
+        <tr><th>Durabilidade</th><td>Alta, por não sofrer corrosão galvânica</td></tr>
+        </table>
+      </div>
+    </section>
+
+    <section class="secao">
+      <h2>Tipo de sinal</h2>
+      <div class="caixa-destaque">
+        <p><strong>Analógico (tensão contínua proporcional à umidade)</strong></p>
+      </div>
+      <p>A saída é uma tensão analógica contínua, lida por qualquer entrada ADC. Como o valor bruto não tem unidade física, é indispensável calibrar o sensor: mede-se o valor com a sonda no ar (solo totalmente seco) e depois submersa em água até a linha máxima indicada na placa (100% de umidade). Com esses dois extremos, aplica-se um mapeamento linear para converter a leitura em percentual. Vale notar que o ADC do ESP32 é não linear em suas extremidades, o que exige atenção na calibração; além disso, cada tipo de solo (arenoso, argiloso) altera a resposta, sendo recomendável recalibrar a cada cultura.</p>
+    </section>
+
+    <section class="secao">
+      <h2>Aplicações industriais e IoT</h2>
+      <ul>
+        <li>Irrigação automatizada em estufas, viveiros e lavouras;</li>
+        <li>Agricultura de precisão e monitoramento remoto de talhões;</li>
+        <li>Controle de umidade em jardins verticais e paisagismo urbano;</li>
+        <li>Pesquisa agronômica e acompanhamento de perfis de solo em diferentes profundidades;</li>
+        <li>Monitoramento de aterros, taludes e estabilidade de encostas;</li>
+        <li>Sistemas hidropônicos e de cultivo em substrato controlado.</li>
+      </ul>
+    </section>
+
+    <section class="secao">
+      <h2>Exemplo de utilização em um projeto</h2>
+      <p>Em uma estufa automatizada, três sensores capacitivos são enterrados em pontos distintos do canteiro, a diferentes profundidades. Um ESP32 alimentado por painel solar acorda a cada 15 minutos do modo <em>deep sleep</em>, energiza os sensores por um transistor, realiza as leituras e volta a dormir para poupar bateria. Se a média das três medidas indicar umidade abaixo de 35%, a válvula solenoide de irrigação é aberta por um tempo proporcional ao déficit medido. Todos os valores são enviados por Wi-Fi para um painel que exibe o histórico de umidade e o volume de água economizado em relação à irrigação por temporizador fixo.</p>
+      <pre class="bloco-codigo"><code>const int PINO_SOLO = 35;
+const int PINO_VALVULA = 25;
+const int VALOR_SECO = 3200;      // leitura com a sonda no ar
+const int VALOR_MOLHADO = 1300;   // leitura com a sonda na agua
+
+int lerUmidadePercentual() {
+  int bruto = analogRead(PINO_SOLO);
+  // a leitura e inversamente proporcional a umidade
+  int pct = map(bruto, VALOR_SECO, VALOR_MOLHADO, 0, 100);
+  return constrain(pct, 0, 100);
+}
+
+void setup() {
+  Serial.begin(115200);
+  pinMode(PINO_VALVULA, OUTPUT);
+}
+
+void loop() {
+  int umidade = lerUmidadePercentual();
+  Serial.print("Umidade do solo: ");
+  Serial.print(umidade);
+  Serial.println(" %");
+
+  if (umidade &lt; 35) {
+    digitalWrite(PINO_VALVULA, HIGH);   // irriga
+    delay(20000);
+    digitalWrite(PINO_VALVULA, LOW);
+  }
+
+  delay(900000);                        // 15 minutos
+}</code></pre>
+    </section>
+
+    <section class="secao">
+      <h2>Fabricantes e modelos comerciais</h2>
+      <p>Confira alguns modelos de mercado, de fabricantes distintos:</p>
+      <div class="grade-modelos">
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: Capacitive Soil Moisture Sensor v1.2 ]</div>
+          <h4>Capacitive Soil Moisture Sensor v1.2</h4>
+          <span class="fabricante">Diversos fabricantes (DFRobot e similares)</span>
+          <p>Módulo mais comum em projetos com Arduino e ESP32.</p>
+        </div>
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: DFRobot SEN0308 / SEN0193 ]</div>
+          <h4>DFRobot SEN0308 / SEN0193</h4>
+          <span class="fabricante">DFRobot</span>
+          <p>Versões com verniz de proteção reforçado para uso prolongado.</p>
+        </div>
+        <div class="card-modelo">
+          <div class="imagem-placeholder">[ Imagem: Sonda TDR/FDR industrial ]</div>
+          <h4>Sonda TDR/FDR industrial</h4>
+          <span class="fabricante">Sentek, Decagon, Irrometer</span>
+          <p>Sensores profissionais com saída 4–20 mA ou SDI-12 para agricultura comercial.</p>
+        </div>
+      </div>
+    </section>
+
+    <nav class="navegacao-robos">
+      <a href="mq-2.html">&larr; MQ-2</a>
+      <a href="../index.html">Voltar ao início</a>
+      <a href="yf-s201.html">YF-S201 &rarr;</a>
+    </nav>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Portal <span>Robótica Industrial 4.0</span> &mdash; Catálogo técnico e educativo sobre robôs industriais e IoT.</p>
+    <p>Projeto acadêmico desenvolvido para fins de estudo em Indústria 4.0.</p>
+  </footer>
+
+  <button id="botao-topo" aria-label="Voltar ao topo">&uarr;</button>
+
+  <script src="../js/script.js"></script>
+
+</body>
+</html>
