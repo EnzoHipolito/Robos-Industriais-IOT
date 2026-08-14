@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DS18B20 | Portal Robótica Industrial 4.0</title>
-  <meta name="description" content="DS18B20: conceito, princípio de funcionamento, especificações técnicas, aplicações industriais e modelos comerciais.">
+  <meta name="description" content="DS18B20: conceito, princípio de funcionamento, especificações técnicas, aplicações industriais.">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -76,7 +76,7 @@
     <section class="secao">
       <h2>Conceito</h2>
       <p>O DS18B20 é um termômetro digital de alta confiabilidade fabricado pela Maxim Integrated (hoje Analog Devices). Diferente de sensores analógicos como o LM35, ele realiza a conversão da temperatura internamente e entrega o valor já em formato digital, o que elimina erros causados por ruído elétrico no cabo. Sua principal característica é possuir um número de série de 64 bits gravado na fábrica, permitindo que dezenas de sensores compartilhem o mesmo par de fios e ainda assim sejam identificados individualmente. A versão encapsulada em tubo de aço inoxidável à prova d'água é a mais comum em aplicações industriais e de monitoramento de líquidos.</p>
-      <div class="imagem-ilustrativa">[ Imagem ilustrativa: DS18B20 ]</div>
+      <div class="imagem-ilustrativa"><img src="../img/sensor_DS18B20.png" alt="DS18B20"></div>
     </section>
 
     <section class="secao">
@@ -153,30 +153,6 @@ void loop() {
 }</code></pre>
     </section>
 
-    <section class="secao">
-      <h2>Fabricantes e modelos comerciais</h2>
-      <p>Confira alguns modelos de mercado, de fabricantes distintos:</p>
-      <div class="grade-modelos">
-        <div class="card-modelo">
-          <div class="imagem-placeholder">[ Imagem: DS18B20 ]</div>
-          <h4>DS18B20</h4>
-          <span class="fabricante">Analog Devices / Maxim Integrated</span>
-          <p>Componente original, disponível em TO-92 e SOIC.</p>
-        </div>
-        <div class="card-modelo">
-          <div class="imagem-placeholder">[ Imagem: DS18B20 à prova d'água ]</div>
-          <h4>DS18B20 à prova d'água</h4>
-          <span class="fabricante">Diversos (sonda em aço inox)</span>
-          <p>Sonda selada com cabo de 1 a 5 m para líquidos e ambientes agressivos.</p>
-        </div>
-        <div class="card-modelo">
-          <div class="imagem-placeholder">[ Imagem: DS18B20-PAR ]</div>
-          <h4>DS18B20-PAR</h4>
-          <span class="fabricante">Maxim Integrated</span>
-          <p>Variante otimizada para operação exclusiva em modo parasita.</p>
-        </div>
-      </div>
-    </section>
 
     <nav class="navegacao-robos">
       <a href="dht22.html">&larr; DHT22 (AM2302)</a>

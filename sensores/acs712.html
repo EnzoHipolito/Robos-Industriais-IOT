@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>ACS712 | Portal Robótica Industrial 4.0</title>
-  <meta name="description" content="ACS712: conceito, princípio de funcionamento, especificações técnicas, aplicações industriais e modelos comerciais.">
+  <meta name="description" content="ACS712: conceito, princípio de funcionamento, especificações técnicas, aplicações industriais.">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -76,7 +76,7 @@
     <section class="secao">
       <h2>Conceito</h2>
       <p>O ACS712 é um sensor de corrente linear fabricado pela Allegro MicroSystems que mede tanto corrente contínua quanto alternada utilizando o efeito Hall. Sua característica mais importante é a isolação galvânica: o caminho por onde circula a corrente medida é fisicamente separado da eletrônica de saída, suportando cerca de 2,1 kV eficazes. Isso permite que um microcontrolador de 5 V monitore com segurança cargas ligadas à rede elétrica. Comparado ao uso de resistores <em>shunt</em>, ele tem a vantagem de introduzir uma perda mínima no circuito, pois a resistência interna do condutor é de apenas 1,2 mΩ.</p>
-      <div class="imagem-ilustrativa">[ Imagem ilustrativa: ACS712 ]</div>
+      <div class="imagem-ilustrativa"><img src="../img/sensor_ACS712.png" alt="ACS712"></div>
     </section>
 
     <section class="secao">
@@ -158,30 +158,6 @@ void loop() {
 }</code></pre>
     </section>
 
-    <section class="secao">
-      <h2>Fabricantes e modelos comerciais</h2>
-      <p>Confira alguns modelos de mercado, de fabricantes distintos:</p>
-      <div class="grade-modelos">
-        <div class="card-modelo">
-          <div class="imagem-placeholder">[ Imagem: ACS712ELCTR-20A-T ]</div>
-          <h4>ACS712ELCTR-20A-T</h4>
-          <span class="fabricante">Allegro MicroSystems</span>
-          <p>Versão de ±20 A, a mais usada em módulos didáticos.</p>
-        </div>
-        <div class="card-modelo">
-          <div class="imagem-placeholder">[ Imagem: ACS758 / ACS37800 ]</div>
-          <h4>ACS758 / ACS37800</h4>
-          <span class="fabricante">Allegro MicroSystems</span>
-          <p>Modelos para correntes maiores e com medição digital de energia.</p>
-        </div>
-        <div class="card-modelo">
-          <div class="imagem-placeholder">[ Imagem: SCT-013 (transformador de corrente) ]</div>
-          <h4>SCT-013 (transformador de corrente)</h4>
-          <span class="fabricante">YHDC</span>
-          <p>Alternativa não invasiva do tipo alicate, apenas para corrente alternada.</p>
-        </div>
-      </div>
-    </section>
 
     <nav class="navegacao-robos">
       <a href="yf-s201.html">&larr; YF-S201</a>

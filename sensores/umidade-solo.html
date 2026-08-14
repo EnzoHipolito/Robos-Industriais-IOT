@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Sensor Capacitivo de Umidade do Solo | Portal Robótica Industrial 4.0</title>
-  <meta name="description" content="Sensor Capacitivo de Umidade do Solo: conceito, princípio de funcionamento, especificações técnicas, aplicações industriais e modelos comerciais.">
+  <meta name="description" content="Sensor Capacitivo de Umidade do Solo: conceito, princípio de funcionamento, especificações técnicas, aplicações industriais.">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -76,7 +76,7 @@
     <section class="secao">
       <h2>Conceito</h2>
       <p>O sensor capacitivo de umidade do solo — cuja versão mais conhecida é a placa v1.2 — mede indiretamente o teor de água presente no solo. Ele foi criado para substituir os antigos sensores resistivos, que possuem dois eletrodos metálicos expostos e, por conduzirem corrente diretamente através da terra úmida, sofrem oxidação e eletrólise, degradando-se em poucas semanas. No sensor capacitivo, as trilhas condutoras ficam completamente cobertas pela máscara isolante da placa, de modo que não há contato elétrico com o solo. Isso garante vida útil muito maior e leituras mais estáveis ao longo do tempo, tornando-o o padrão em projetos de agricultura de precisão e irrigação automatizada.</p>
-      <div class="imagem-ilustrativa">[ Imagem ilustrativa: Sensor Capacitivo de Umidade do Solo ]</div>
+      <div class="imagem-ilustrativa"><img src="../img/sensor_Umidade.png" alt="Sensor Capacitivo de Umidade do Solo"></div>
     </section>
 
     <section class="secao">
@@ -156,30 +156,6 @@ void loop() {
 }</code></pre>
     </section>
 
-    <section class="secao">
-      <h2>Fabricantes e modelos comerciais</h2>
-      <p>Confira alguns modelos de mercado, de fabricantes distintos:</p>
-      <div class="grade-modelos">
-        <div class="card-modelo">
-          <div class="imagem-placeholder">[ Imagem: Capacitive Soil Moisture Sensor v1.2 ]</div>
-          <h4>Capacitive Soil Moisture Sensor v1.2</h4>
-          <span class="fabricante">Diversos fabricantes (DFRobot e similares)</span>
-          <p>Módulo mais comum em projetos com Arduino e ESP32.</p>
-        </div>
-        <div class="card-modelo">
-          <div class="imagem-placeholder">[ Imagem: DFRobot SEN0308 / SEN0193 ]</div>
-          <h4>DFRobot SEN0308 / SEN0193</h4>
-          <span class="fabricante">DFRobot</span>
-          <p>Versões com verniz de proteção reforçado para uso prolongado.</p>
-        </div>
-        <div class="card-modelo">
-          <div class="imagem-placeholder">[ Imagem: Sonda TDR/FDR industrial ]</div>
-          <h4>Sonda TDR/FDR industrial</h4>
-          <span class="fabricante">Sentek, Decagon, Irrometer</span>
-          <p>Sensores profissionais com saída 4–20 mA ou SDI-12 para agricultura comercial.</p>
-        </div>
-      </div>
-    </section>
 
     <nav class="navegacao-robos">
       <a href="mq-2.html">&larr; MQ-2</a>

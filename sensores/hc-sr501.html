@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>PIR HC-SR501 | Portal Robótica Industrial 4.0</title>
-  <meta name="description" content="PIR HC-SR501: conceito, princípio de funcionamento, especificações técnicas, aplicações industriais e modelos comerciais.">
+  <meta name="description" content="PIR HC-SR501: conceito, princípio de funcionamento, especificações técnicas, aplicações industriais.">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -76,7 +76,7 @@
     <section class="secao">
       <h2>Conceito</h2>
       <p>O HC-SR501 é um módulo sensor de movimento do tipo PIR (Passive Infrared, ou infravermelho passivo). O termo "passivo" indica que ele não emite nenhum tipo de radiação: apenas capta a radiação infravermelha naturalmente emitida por corpos aquecidos, como pessoas e animais. A cúpula branca que o caracteriza é uma lente de Fresnel, responsável por dividir o campo de visão em várias zonas e concentrar o infravermelho sobre o elemento sensor. É importante entender que o PIR detecta <em>variação</em> de calor, ou seja, movimento — um corpo completamente parado deixa de ser detectado após alguns instantes.</p>
-      <div class="imagem-ilustrativa">[ Imagem ilustrativa: PIR HC-SR501 ]</div>
+      <div class="imagem-ilustrativa"><img src="../img/sensor_PIR%20HC-SR501.png" alt="PIR HC-SR501"></div>
     </section>
 
     <section class="secao">
@@ -153,30 +153,6 @@ void loop() {
 }</code></pre>
     </section>
 
-    <section class="secao">
-      <h2>Fabricantes e modelos comerciais</h2>
-      <p>Confira alguns modelos de mercado, de fabricantes distintos:</p>
-      <div class="grade-modelos">
-        <div class="card-modelo">
-          <div class="imagem-placeholder">[ Imagem: HC-SR501 ]</div>
-          <h4>HC-SR501</h4>
-          <span class="fabricante">Diversos fabricantes (CI BISS0001)</span>
-          <p>Módulo padrão com ajustes de sensibilidade e tempo.</p>
-        </div>
-        <div class="card-modelo">
-          <div class="imagem-placeholder">[ Imagem: HC-SR505 / AM312 ]</div>
-          <h4>HC-SR505 / AM312</h4>
-          <span class="fabricante">Diversos fabricantes</span>
-          <p>Versões miniaturizadas, com saída de 3,3 V e menor consumo.</p>
-        </div>
-        <div class="card-modelo">
-          <div class="imagem-placeholder">[ Imagem: Panasonic EKMB (série PaPIRs) ]</div>
-          <h4>Panasonic EKMB (série PaPIRs)</h4>
-          <span class="fabricante">Panasonic</span>
-          <p>Sensores PIR de qualidade industrial, com baixíssimo consumo.</p>
-        </div>
-      </div>
-    </section>
 
     <nav class="navegacao-robos">
       <a href="hc-sr04.html">&larr; HC-SR04</a>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>HC-SR04 | Portal Robótica Industrial 4.0</title>
-  <meta name="description" content="HC-SR04: conceito, princípio de funcionamento, especificações técnicas, aplicações industriais e modelos comerciais.">
+  <meta name="description" content="HC-SR04: conceito, princípio de funcionamento, especificações técnicas, aplicações industriais.">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -76,7 +76,7 @@
     <section class="secao">
       <h2>Conceito</h2>
       <p>O HC-SR04 é um sensor ultrassônico que mede a distância até um objeto sem qualquer contato físico, utilizando ondas sonoras de 40 kHz — muito acima da faixa audível pelo ser humano. O módulo possui dois transdutores cilíndricos: um transmissor, que emite o pulso sonoro, e um receptor, que capta o eco refletido pelo obstáculo. É um dos sensores mais difundidos em robótica educacional e em automação de baixo custo, por ser simples, barato e independente da cor ou da transparência do alvo — características que costumam prejudicar sensores ópticos.</p>
-      <div class="imagem-ilustrativa">[ Imagem ilustrativa: HC-SR04 ]</div>
+      <div class="imagem-ilustrativa"><img src="../img/sensor_HC-SR04.png" alt="HC-SR04"></div>
     </section>
 
     <section class="secao">
@@ -157,30 +157,6 @@ void loop() {
 }</code></pre>
     </section>
 
-    <section class="secao">
-      <h2>Fabricantes e modelos comerciais</h2>
-      <p>Confira alguns modelos de mercado, de fabricantes distintos:</p>
-      <div class="grade-modelos">
-        <div class="card-modelo">
-          <div class="imagem-placeholder">[ Imagem: HC-SR04 ]</div>
-          <h4>HC-SR04</h4>
-          <span class="fabricante">ElecFreaks e similares</span>
-          <p>Modelo padrão de 5 V, o mais difundido do mercado.</p>
-        </div>
-        <div class="card-modelo">
-          <div class="imagem-placeholder">[ Imagem: HC-SR04P / RCWL-1601 ]</div>
-          <h4>HC-SR04P / RCWL-1601</h4>
-          <span class="fabricante">Diversos fabricantes</span>
-          <p>Versões que operam de 3 V a 5,5 V, compatíveis com ESP32.</p>
-        </div>
-        <div class="card-modelo">
-          <div class="imagem-placeholder">[ Imagem: UB800-18GM40 (ultrassônico industrial) ]</div>
-          <h4>UB800-18GM40 (ultrassônico industrial)</h4>
-          <span class="fabricante">Pepperl+Fuchs / SICK</span>
-          <p>Sensores ultrassônicos industriais IP67 com saída 4–20 mA ou IO-Link.</p>
-        </div>
-      </div>
-    </section>
 
     <nav class="navegacao-robos">
       <a href="bh1750.html">&larr; BH1750</a>

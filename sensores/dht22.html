@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>DHT22 (AM2302) | Portal Robótica Industrial 4.0</title>
-  <meta name="description" content="DHT22 (AM2302): conceito, princípio de funcionamento, especificações técnicas, aplicações industriais e modelos comerciais.">
+  <meta name="description" content="DHT22 (AM2302): conceito, princípio de funcionamento, especificações técnicas, aplicações industriais.">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -76,7 +76,7 @@
     <section class="secao">
       <h2>Conceito</h2>
       <p>O DHT22, também comercializado como AM2302, é um sensor digital que mede simultaneamente a temperatura e a umidade relativa do ar. Ele reúne, dentro de um único encapsulamento plástico ventilado, um elemento sensor capacitivo de umidade, um termistor NTC e um microcontrolador de 8 bits que realiza toda a conversão e a calibração internamente. Por isso o sensor entrega diretamente um valor já calibrado, dispensando circuitos de condicionamento externos. É a versão mais precisa e de maior faixa de medição da mesma família do popular DHT11.</p>
-      <div class="imagem-ilustrativa">[ Imagem ilustrativa: DHT22 (AM2302) ]</div>
+      <div class="imagem-ilustrativa"><img src="../img/sensor_dht22.png" alt="DHT22 (AM2302)"></div>
     </section>
 
     <section class="secao">
@@ -149,30 +149,6 @@ void loop() {
 }</code></pre>
     </section>
 
-    <section class="secao">
-      <h2>Fabricantes e modelos comerciais</h2>
-      <p>Confira alguns modelos de mercado, de fabricantes distintos:</p>
-      <div class="grade-modelos">
-        <div class="card-modelo">
-          <div class="imagem-placeholder">[ Imagem: Aosong AM2302 ]</div>
-          <h4>Aosong AM2302</h4>
-          <span class="fabricante">Aosong (ASAIR)</span>
-          <p>Versão original do sensor, com fio e conector já montados.</p>
-        </div>
-        <div class="card-modelo">
-          <div class="imagem-placeholder">[ Imagem: DHT22 / RHT03 ]</div>
-          <h4>DHT22 / RHT03</h4>
-          <span class="fabricante">Sparkfun / Maxdetect</span>
-          <p>Mesma pastilha sensora revendida por diversos distribuidores.</p>
-        </div>
-        <div class="card-modelo">
-          <div class="imagem-placeholder">[ Imagem: Sensirion SHT31-D ]</div>
-          <h4>Sensirion SHT31-D</h4>
-          <span class="fabricante">Sensirion</span>
-          <p>Alternativa I2C de precisão superior (±0,3 °C) para uso industrial.</p>
-        </div>
-      </div>
-    </section>
 
     <nav class="navegacao-robos">
       <a href="../index.html">&larr; Início</a>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>BH1750 | Portal Robótica Industrial 4.0</title>
-  <meta name="description" content="BH1750: conceito, princípio de funcionamento, especificações técnicas, aplicações industriais e modelos comerciais.">
+  <meta name="description" content="BH1750: conceito, princípio de funcionamento, especificações técnicas, aplicações industriais.">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -76,7 +76,7 @@
     <section class="secao">
       <h2>Conceito</h2>
       <p>O BH1750 (também identificado como GY-302 na forma de módulo) é um sensor digital de luz ambiente fabricado pela ROHM Semiconductor. Sua grande vantagem sobre o LDR é entregar o valor de iluminância já convertido em lux, a unidade fotométrica padrão, sem necessidade de calibração, divisor de tensão ou conversor analógico-digital. Além disso, sua resposta espectral é próxima à da visão humana, o que torna a leitura muito mais fiel à percepção real de claridade do ambiente do que a de um sensor puramente resistivo.</p>
-      <div class="imagem-ilustrativa">[ Imagem ilustrativa: BH1750 ]</div>
+      <div class="imagem-ilustrativa"><img src="../img/sensor_BH1750.png" alt="BH1750"></div>
     </section>
 
     <section class="secao">
@@ -150,30 +150,6 @@ void loop() {
 }</code></pre>
     </section>
 
-    <section class="secao">
-      <h2>Fabricantes e modelos comerciais</h2>
-      <p>Confira alguns modelos de mercado, de fabricantes distintos:</p>
-      <div class="grade-modelos">
-        <div class="card-modelo">
-          <div class="imagem-placeholder">[ Imagem: BH1750FVI ]</div>
-          <h4>BH1750FVI</h4>
-          <span class="fabricante">ROHM Semiconductor</span>
-          <p>Componente original, em encapsulamento WSOF6.</p>
-        </div>
-        <div class="card-modelo">
-          <div class="imagem-placeholder">[ Imagem: Módulo GY-302 ]</div>
-          <h4>Módulo GY-302</h4>
-          <span class="fabricante">Diversos fabricantes</span>
-          <p>Placa pronta com regulador de 3,3 V, compatível com Arduino e ESP32.</p>
-        </div>
-        <div class="card-modelo">
-          <div class="imagem-placeholder">[ Imagem: TSL2561 / VEML7700 ]</div>
-          <h4>TSL2561 / VEML7700</h4>
-          <span class="fabricante">AMS / Vishay</span>
-          <p>Alternativas I2C com faixa dinâmica ainda maior.</p>
-        </div>
-      </div>
-    </section>
 
     <nav class="navegacao-robos">
       <a href="ds18b20.html">&larr; DS18B20</a>

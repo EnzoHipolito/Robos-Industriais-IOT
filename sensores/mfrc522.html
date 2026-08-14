@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>MFRC522 | Portal Robótica Industrial 4.0</title>
-  <meta name="description" content="MFRC522: conceito, princípio de funcionamento, especificações técnicas, aplicações industriais e modelos comerciais.">
+  <meta name="description" content="MFRC522: conceito, princípio de funcionamento, especificações técnicas, aplicações industriais.">
   <link rel="stylesheet" href="../css/style.css">
 </head>
 <body>
@@ -76,7 +76,7 @@
     <section class="secao">
       <h2>Conceito</h2>
       <p>O MFRC522 é um circuito integrado leitor/gravador de RFID (identificação por radiofrequência) desenvolvido pela NXP Semiconductors, que opera na faixa de 13,56 MHz e é compatível com o padrão ISO/IEC 14443A, incluindo os cartões MIFARE Classic. Comercializado principalmente na forma do módulo RC522 — acompanhado de um cartão e um chaveiro —, permite ler o identificador único (UID) de cada etiqueta e também gravar dados em sua memória interna. É a base de praticamente todos os sistemas de crachá de aproximação, controle de acesso e rastreabilidade de peças de baixo e médio custo.</p>
-      <div class="imagem-ilustrativa">[ Imagem ilustrativa: MFRC522 ]</div>
+      <div class="imagem-ilustrativa"><img src="../img/sensor_MFRC522.png" alt="MFRC522"></div>
     </section>
 
     <section class="secao">
@@ -167,30 +167,6 @@ void loop() {
 }</code></pre>
     </section>
 
-    <section class="secao">
-      <h2>Fabricantes e modelos comerciais</h2>
-      <p>Confira alguns modelos de mercado, de fabricantes distintos:</p>
-      <div class="grade-modelos">
-        <div class="card-modelo">
-          <div class="imagem-placeholder">[ Imagem: MFRC522 ]</div>
-          <h4>MFRC522</h4>
-          <span class="fabricante">NXP Semiconductors</span>
-          <p>Circuito integrado original, base de todos os módulos RC522.</p>
-        </div>
-        <div class="card-modelo">
-          <div class="imagem-placeholder">[ Imagem: Módulo RC522 (kit com cartão e tag) ]</div>
-          <h4>Módulo RC522 (kit com cartão e tag)</h4>
-          <span class="fabricante">Diversos fabricantes</span>
-          <p>Placa pronta com antena impressa e interface SPI.</p>
-        </div>
-        <div class="card-modelo">
-          <div class="imagem-placeholder">[ Imagem: PN532 / RDM6300 ]</div>
-          <h4>PN532 / RDM6300</h4>
-          <span class="fabricante">NXP / diversos</span>
-          <p>Alternativas com suporte a NFC (13,56 MHz) e a etiquetas de 125 kHz.</p>
-        </div>
-      </div>
-    </section>
 
     <nav class="navegacao-robos">
       <a href="acs712.html">&larr; ACS712</a>
