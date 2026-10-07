@@ -87,6 +87,17 @@
   background-color: #13315c;
 }
 
+.circuitos-conteudo .video-wrapper + .video-wrapper {
+  border-top: 1px solid #fff;
+}
+
+.circuitos-conteudo .video-wrapper h4 {
+  padding: 0.7rem 1rem;
+  color: #fff;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
 .circuitos-conteudo video,
 .circuitos-conteudo iframe {
   display: block;
