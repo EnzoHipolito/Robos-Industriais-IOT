@@ -1,0 +1,207 @@
+/* Componentes específicos da página de exercícios.
+   As cores, tipografia e espaçamentos principais vêm de style.css. */
+
+.circuitos-conteudo {
+  padding-top: 2.5rem;
+}
+
+.circuitos-conteudo .exercise-section {
+  margin-bottom: 2.5rem;
+  scroll-margin-top: 90px;
+}
+
+.circuitos-conteudo .section-label {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  margin-bottom: 0.5rem;
+  color: #ff7a00;
+  font-size: 0.75rem;
+  font-weight: bold;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+.circuitos-conteudo .ex-number {
+  color: #fff;
+  background-color: #0b2545;
+  border-radius: 4px;
+  padding: 0.2rem 0.45rem;
+}
+
+.circuitos-conteudo .section-title {
+  color: #0b2545;
+  font-size: 1.5rem;
+  margin-bottom: 0.8rem;
+  border-left: 5px solid #ff7a00;
+  padding-left: 0.7rem;
+}
+
+.circuitos-conteudo .section-desc {
+  color: #555;
+  margin-bottom: 1.2rem;
+}
+
+.circuitos-conteudo .content-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.2rem;
+  align-items: start;
+}
+
+.circuitos-conteudo .card {
+  min-width: 0;
+  overflow: hidden;
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.circuitos-conteudo .card-header {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  padding: 0.9rem 1rem;
+  color: #fff;
+  background-color: #0b2545;
+}
+
+.circuitos-conteudo .card-header h3 {
+  margin: 0;
+  color: #fff;
+  font-size: 1rem;
+}
+
+.circuitos-conteudo .card-icon {
+  width: 1.5rem;
+  height: 1.5rem;
+  color: #ff7a00;
+}
+
+.circuitos-conteudo .card-icon svg {
+  width: 100%;
+  height: 100%;
+}
+
+.circuitos-conteudo .video-wrapper {
+  background-color: #13315c;
+}
+
+.circuitos-conteudo video,
+.circuitos-conteudo iframe {
+  display: block;
+  width: 100%;
+  height: 360px;
+  border: 0;
+}
+
+.circuitos-conteudo .copy-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  margin-left: auto;
+  border: 1px solid #55708f;
+  border-radius: 4px;
+  padding: 0.35rem 0.6rem;
+  color: #fff;
+  background: transparent;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.75rem;
+}
+
+.circuitos-conteudo .copy-btn:hover,
+.circuitos-conteudo .copy-btn.copied {
+  border-color: #ff7a00;
+  background-color: #ff7a00;
+}
+
+.circuitos-conteudo .copy-btn svg {
+  width: 1rem;
+  height: 1rem;
+}
+
+.circuitos-conteudo .code-scroll {
+  max-height: 420px;
+  overflow: auto;
+  background-color: #0b2545;
+}
+
+.circuitos-conteudo pre {
+  margin: 0;
+  padding: 1rem;
+  color: #d7deea;
+  font-family: Consolas, "Courier New", monospace;
+  font-size: 0.8rem;
+  line-height: 1.5;
+  white-space: pre;
+}
+
+.circuitos-conteudo .c-keyword,
+.circuitos-conteudo .c-func {
+  color: #8ecbff;
+}
+
+.circuitos-conteudo .c-num {
+  color: #ffd166;
+}
+
+.circuitos-conteudo .c-comment {
+  color: #8fa6bb;
+}
+
+.circuitos-conteudo .c-str {
+  color: #9be28c;
+}
+
+.circuitos-conteudo .section-divider {
+  height: 1px;
+  margin: 0 0 2.5rem;
+  background-color: #ddd;
+}
+
+.circuitos-hero {
+  padding-bottom: 2.5rem;
+}
+
+.circuitos-hero .hero-cta {
+  margin-top: 1.2rem;
+}
+
+.circuitos-hero .btn {
+  display: inline-block;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  color: #fff;
+  background-color: #ff7a00;
+  font-size: 0.85rem;
+  font-weight: bold;
+}
+
+.circuitos-hero .btn:hover {
+  background-color: #e56c00;
+}
+
+.circuitos-hero .btn-ghost {
+  background-color: transparent;
+  border: 1px solid #d7deea;
+}
+
+.circuitos-hero .btn-ghost:hover {
+  background-color: #fff;
+  color: #0b2545;
+}
+
+@media (max-width: 768px) {
+  .circuitos-conteudo .content-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .circuitos-conteudo .content-grid.reverse .code-card {
+    order: 1;
+  }
+
+  .circuitos-conteudo .content-grid.reverse .video-card {
+    order: 2;
+  }
+}

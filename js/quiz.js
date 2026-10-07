@@ -1,8 +1,3 @@
-/**
- * Portal de Robótica Industrial 4.0 & IoT
- * Módulo de Quiz - Modelo SAEP / ENEM para Desenvolvimento de Sistemas e Automação
- */
-
 const DADOS_QUIZ = [
   {
     id: 1,
@@ -898,16 +893,16 @@ function exibirPainelResultado(acertos, total) {
 
   if (porcentagem >= 85) {
     proficienciaClasse = "proficiencia-avancado";
-    proficienciaTexto = "Nível de Proficiência: AVANÇADO (Domínio pleno dos conteúdos de Sistemas e Automação IoT)";
+    proficienciaTexto = "Nível de Proficiência: AVANÇADO";
   } else if (porcentagem >= 70) {
     proficienciaClasse = "proficiencia-adequado";
-    proficienciaTexto = "Nível de Proficiência: ADEQUADO (Boa capacidade de resolução das situações-problema)";
+    proficienciaTexto = "Nível de Proficiência: ADEQUADO";
   } else if (porcentagem >= 50) {
     proficienciaClasse = "proficiencia-basico";
-    proficienciaTexto = "Nível de Proficiência: BÁSICO (Conhecimentos fundamentais atendidos, mas requer revisão)";
+    proficienciaTexto = "Nível de Proficiência: BÁSICO";
   } else {
     proficienciaClasse = "proficiencia-abaixo";
-    proficienciaTexto = "Nível de Proficiência: ABAIXO DO BÁSICO (Necessita estudo direcionado dos tópicos do portal)";
+    proficienciaTexto = "Nível de Proficiência: ABAIXO DO BÁSICO";
   }
 
   // Agrupamento por categorias

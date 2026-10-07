@@ -1,0 +1,510 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arduino & TinkerCAD — Exercícios Práticos</title>
+  <meta name="description"
+    content="Demonstração de 3 exercícios de Arduino montados no TinkerCAD, com vídeos dos circuitos e códigos comentados." />
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/circuitos.css" />
+</head>
+
+<body class="circuitos-page">
+  <header class="cabecalho">
+    <nav class="barra-navegacao">
+      <button id="menu-toggle" class="menu-toggle" aria-label="Abrir menu">&#9776;</button>
+      <ul class="menu" id="menu-principal">
+        <li><a href="index.html">In&iacute;cio</a></li>
+        <li><a href="iot.html">IoT</a></li>
+        <li><a href="robotica-industrial.html">Rob&oacute;tica Industrial</a></li>
+        <li class="item-dropdown">
+          <button class="botao-dropdown" aria-expanded="false" aria-controls="submenu-robos">Rob&ocirc;s <span class="seta">&#9662;</span></button>
+          <ul class="submenu" id="submenu-robos">
+            <li><a href="robos/robo-cartesiano.html">Cartesiano</a></li>
+            <li><a href="robos/robo-scara.html">SCARA</a></li>
+            <li><a href="robos/robo-articulado.html">Articulado</a></li>
+            <li><a href="robos/robo-cilindrico.html">Cil&iacute;ndrico</a></li>
+            <li><a href="robos/robo-delta.html">Delta</a></li>
+            <li><a href="robos/robo-polar.html">Polar</a></li>
+            <li><a href="robos/robo-colaborativo.html">Colaborativo (Cobot)</a></li>
+          </ul>
+        </li>
+        <li class="item-dropdown">
+          <button class="botao-dropdown" aria-expanded="false" aria-controls="submenu-sensores">Sensores <span class="seta">&#9662;</span></button>
+          <ul class="submenu" id="submenu-sensores">
+            <li><a href="sensores/dht22.html">DHT22 &mdash; Temp./Umidade</a></li>
+            <li><a href="sensores/ds18b20.html">DS18B20 &mdash; Temperatura</a></li>
+            <li><a href="sensores/bh1750.html">BH1750 &mdash; Luminosidade</a></li>
+            <li><a href="sensores/hc-sr04.html">HC-SR04 &mdash; Dist&acirc;ncia</a></li>
+            <li><a href="sensores/hc-sr501.html">PIR HC-SR501 &mdash; Movimento</a></li>
+            <li><a href="sensores/mq-2.html">MQ-2 &mdash; G&aacute;s e Fuma&ccedil;a</a></li>
+            <li><a href="sensores/umidade-solo.html">Umidade do Solo (Capacitivo)</a></li>
+            <li><a href="sensores/yf-s201.html">YF-S201 &mdash; Fluxo de &Aacute;gua</a></li>
+            <li><a href="sensores/acs712.html">ACS712 &mdash; Corrente</a></li>
+            <li><a href="sensores/mfrc522.html">MFRC522 &mdash; RFID</a></li>
+          </ul>
+        </li>
+        <li><a href="quiz.html">Quiz</a></li>
+        <li><a href="circuitos.html" class="ativo">Circuitos</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <!-- ═══════════════════════════ HERO ═══════════════════════════ -->
+  <header class="hero circuitos-hero" id="inicio">
+
+    <div class="hero-content">
+      <span class="selo">TinkerCAD Simulator</span>
+      <h1>Exercícios Práticos de Arduino</h1>
+      <p>
+        Três projetos desenvolvidos no TinkerCAD — cada um com o vídeo do circuito
+        simulado e o código comentado passo a passo.
+      </p>
+      <div class="hero-cta">
+        <a href="#exercicio-3" class="btn btn-ghost" id="btn-ver-todos">Ver todos</a>
+      </div>
+
+    </div>
+  </header>
+
+  <!-- ═══════════════════════════ MAIN ═══════════════════════════ -->
+  <main class="conteudo circuitos-conteudo">
+
+    <!-- ─── EXERCÍCIO 1 ─── -->
+    <section class="exercise-section" id="exercicio-1">
+      <div class="container">
+
+        <div class="section-label">
+          <span class="ex-number">01</span>
+          <span class="ex-tag">Exercício</span>
+        </div>
+
+        <h2 class="section-title" id="titulo-ex1">Exercício 1</h2>
+        <p class="section-desc" id="desc-ex1">
+          <!-- COLOQUE A DESCRIÇÃO DO EXERCÍCIO 1 AQUI -->
+          Monte um circuito capaz de controlar automaticamente o LED utilizando as
+          informações dos dois sensores. <br>
+          O sistema deverá seguir esta lógica: <br>
+          • Pessoa presente + ambiente escuro → LED ligado <br>
+          • Pessoa presente + ambiente claro → LED desligado <br>
+          • Sem pessoa → LED desligado
+        </p>
+
+        <div class="content-grid">
+
+          <!-- Vídeo -->
+          <div class="card video-card" id="video-card-1">
+            <div class="card-header">
+              <div class="card-icon video-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+              <h3>Circuito no TinkerCAD</h3>
+            </div>
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/ZgIiF_DsfPs"
+                title="Vídeo do circuito do exercício 1"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+
+          <!-- Código -->
+          <div class="card code-card" id="code-card-1">
+            <div class="card-header">
+              <div class="card-icon code-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
+                </svg>
+              </div>
+              <h3>Código Arduino</h3>
+              <button class="copy-btn" id="copy-btn-1" onclick="copyCode('code-ex1', 'copy-btn-1')"
+                aria-label="Copiar código do exercício 1">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" />
+                </svg>
+                Copiar
+              </button>
+            </div>
+            <div class="code-scroll">
+              <pre><code id="code-ex1" class="arduino-code"><span class="c-keyword">const</span> <span class="c-keyword">int</span> pinPIR = <span class="c-num">2</span>;
+<span class="c-keyword">const</span> <span class="c-keyword">int</span> pinLDR = A0;
+<span class="c-keyword">const</span> <span class="c-keyword">int</span> pinLED = <span class="c-num">8</span>;
+
+<span class="c-keyword">int</span> limiarLuminosidade = <span class="c-num">400</span>; <span class="c-comment">// Ajuste conforme a simulação do Tinkercad</span>
+
+<span class="c-keyword">void</span> <span class="c-func">setup</span>() {
+  <span class="c-func">pinMode</span>(pinPIR, INPUT);
+  <span class="c-func">pinMode</span>(pinLED, OUTPUT);
+  <span class="c-func">pinMode</span>(pinLDR, INPUT);
+  Serial.<span class="c-func">begin</span>(<span class="c-num">9600</span>);
+}
+
+<span class="c-keyword">void</span> <span class="c-func">loop</span>() {
+  <span class="c-keyword">int</span> presenca = <span class="c-func">digitalRead</span>(pinPIR);
+  <span class="c-keyword">int</span> leituraLuminosidade = <span class="c-func">analogRead</span>(pinLDR);
+
+  <span class="c-comment">// Lógica: Pessoa presente (HIGH) E Ambiente Escuro (leitura &lt; limiar)</span>
+  <span class="c-keyword">if</span> (presenca == HIGH &amp;&amp; leituraLuminosidade &lt; limiarLuminosidade) {
+    <span class="c-func">digitalWrite</span>(pinLED, HIGH);
+  } <span class="c-keyword">else</span> {
+    <span class="c-func">digitalWrite</span>(pinLED, LOW);
+  }
+  <span class="c-func">delay</span>(<span class="c-num">100</span>);
+}
+              </code></pre>
+            </div>
+          </div>
+
+        </div><!-- .content-grid -->
+      </div><!-- .container -->
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="section-divider" aria-hidden="true">
+      <div class="divider-line"></div>
+    </div>
+
+    <!-- ─── EXERCÍCIO 2 ─── -->
+    <section class="exercise-section" id="exercicio-2">
+      <div class="container">
+
+        <div class="section-label">
+          <span class="ex-number">02</span>
+          <span class="ex-tag">Exercício</span>
+        </div>
+
+        <h2 class="section-title" id="titulo-ex2">Exercício 2</h2>
+        <p class="section-desc" id="desc-ex2">
+          <!-- COLOQUE A DESCRIÇÃO DO EXERCÍCIO 2 AQUI -->
+          Desenvolva um sistema de estacionamento utilizando o sensor ultrassônico para
+          medir a distância e o potenciômetro para definir o limite de segurança.<br>
+          Regras de funcionamento: O potenciômetro deverá determinar a distância limite.
+          <br>Exemplo:
+          • Objeto distante → LED desligado <br>
+          • Objeto se aproximando → LED piscando <br>
+          • Objeto dentro da distância definida → LED ligado <br>
+          • O valor configurado pelo potenciômetro deverá influenciar o comportamento
+          do sistema.
+        </p>
+
+        <div class="content-grid reverse">
+
+          <!-- Código -->
+          <div class="card code-card" id="code-card-2">
+            <div class="card-header">
+              <div class="card-icon code-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
+                </svg>
+              </div>
+              <h3>Código Arduino</h3>
+              <button class="copy-btn" id="copy-btn-2" onclick="copyCode('code-ex2', 'copy-btn-2')"
+                aria-label="Copiar código do exercício 2">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" />
+                </svg>
+                Copiar
+              </button>
+            </div>
+            <div class="code-scroll">
+              <pre><code id="code-ex2" class="arduino-code"><span class="c-keyword">const</span> <span class="c-keyword">int</span> pinoSensor = <span class="c-num">7</span>;
+<span class="c-keyword">const</span> <span class="c-keyword">int</span> pinoLED = <span class="c-num">4</span>;
+<span class="c-keyword">const</span> <span class="c-keyword">int</span> pinoPotenciometro = A0;
+
+<span class="c-comment">// Distância mínima considerada para o alerta máximo</span>
+<span class="c-keyword">const</span> <span class="c-keyword">int</span> distanciaCritica = <span class="c-num">10</span>;
+
+<span class="c-comment">// Variáveis</span>
+<span class="c-keyword">long</span> duracao;
+<span class="c-keyword">float</span> distancia;
+
+<span class="c-keyword">void</span> <span class="c-func">setup</span>() {
+  <span class="c-func">pinMode</span>(pinoSensor, OUTPUT);
+  <span class="c-func">pinMode</span>(pinoLED, OUTPUT);
+  Serial.<span class="c-func">begin</span>(<span class="c-num">9600</span>);
+}
+
+<span class="c-keyword">void</span> <span class="c-func">loop</span>() {
+
+  <span class="c-comment">// ==========================================</span>
+  <span class="c-comment">// LEITURA DO POTENCIÔMETRO</span>
+  <span class="c-comment">// ==========================================</span>
+
+  <span class="c-keyword">int</span> valorPot = <span class="c-func">analogRead</span>(pinoPotenciometro);
+
+  <span class="c-comment">// Converte o potenciômetro para uma distância</span>
+  <span class="c-comment">// de segurança entre 10 cm e 50 cm</span>
+  <span class="c-keyword">int</span> distanciaLimite = <span class="c-func">map</span>(valorPot, <span class="c-num">0</span>, <span class="c-num">1023</span>, <span class="c-num">10</span>, <span class="c-num">50</span>);
+
+  <span class="c-comment">// ==========================================</span>
+  <span class="c-comment">// LEITURA DO SENSOR ULTRASSÔNICO</span>
+  <span class="c-comment">// ==========================================</span>
+
+  <span class="c-comment">// Envia o pulso</span>
+  <span class="c-func">pinMode</span>(pinoSensor, OUTPUT);
+  <span class="c-func">digitalWrite</span>(pinoSensor, LOW);
+  <span class="c-func">delayMicroseconds</span>(<span class="c-num">2</span>);
+  <span class="c-func">digitalWrite</span>(pinoSensor, HIGH);
+  <span class="c-func">delayMicroseconds</span>(<span class="c-num">5</span>);
+  <span class="c-func">digitalWrite</span>(pinoSensor, LOW);
+
+  <span class="c-comment">// Muda o pino para entrada para receber o retorno</span>
+  <span class="c-func">pinMode</span>(pinoSensor, INPUT);
+  duracao = <span class="c-func">pulseIn</span>(pinoSensor, HIGH);
+
+  <span class="c-comment">// Converte o tempo em distância</span>
+  distancia = duracao / <span class="c-num">29.0</span> / <span class="c-num">2.0</span>;
+
+  <span class="c-comment">// ==========================================</span>
+  <span class="c-comment">// EXIBE OS VALORES NO MONITOR SERIAL</span>
+  <span class="c-comment">// ==========================================</span>
+
+  Serial.<span class="c-func">print</span>(<span class="c-str">"Distancia: "</span>);
+  Serial.<span class="c-func">print</span>(distancia);
+  Serial.<span class="c-func">print</span>(<span class="c-str">" cm | Limite: "</span>);
+  Serial.<span class="c-func">print</span>(distanciaLimite);
+  Serial.<span class="c-func">println</span>(<span class="c-str">" cm"</span>);
+
+  <span class="c-comment">// ==========================================</span>
+  <span class="c-comment">// SISTEMA DE ALERTA</span>
+  <span class="c-comment">// ==========================================</span>
+
+  <span class="c-comment">// OBJETO MUITO LONGE</span>
+  <span class="c-keyword">if</span> (distancia &gt; distanciaLimite) {
+    <span class="c-func">digitalWrite</span>(pinoLED, LOW);
+    <span class="c-func">delay</span>(<span class="c-num">50</span>);
+  }
+
+  <span class="c-comment">// OBJETO SE APROXIMANDO</span>
+  <span class="c-keyword">else</span> <span class="c-keyword">if</span> (distancia &gt; distanciaCritica) {
+
+    <span class="c-comment">// Quanto mais perto, menor o intervalo entre as piscadas.</span>
+    <span class="c-keyword">int</span> intervalo = <span class="c-func">map</span>(
+      distancia,
+      distanciaLimite,
+      distanciaCritica,
+      <span class="c-num">700</span>,
+      <span class="c-num">100</span>
+    );
+    <span class="c-func">digitalWrite</span>(pinoLED, HIGH);
+    <span class="c-func">delay</span>(intervalo);
+    <span class="c-func">digitalWrite</span>(pinoLED, LOW);
+    <span class="c-func">delay</span>(intervalo);
+  }
+
+  <span class="c-comment">// OBJETO MUITO PRÓXIMO</span>
+  <span class="c-keyword">else</span> {
+    <span class="c-func">digitalWrite</span>(pinoLED, HIGH);
+    <span class="c-func">delay</span>(<span class="c-num">50</span>);
+  }
+}
+              </code></pre>
+            </div>
+          </div>
+
+          <!-- Vídeo -->
+          <div class="card video-card" id="video-card-2">
+            <div class="card-header">
+              <div class="card-icon video-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+              <h3>Circuito no TinkerCAD</h3>
+            </div>
+            <div class="video-wrapper">
+              <iframe
+                src="https://www.youtube.com/embed/SK4CNiemLFM"
+                title="Vídeo do circuito do exercício 2"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen></iframe>
+            </div>
+          </div>
+
+        </div><!-- .content-grid -->
+      </div><!-- .container -->
+    </section>
+
+    <!-- DIVIDER -->
+    <div class="section-divider" aria-hidden="true">
+      <div class="divider-line"></div>
+    </div>
+
+    <!-- ─── EXERCÍCIO 3 ─── -->
+    <section class="exercise-section" id="exercicio-3">
+      <div class="container">
+
+        <div class="section-label">
+          <span class="ex-number">03</span>
+          <span class="ex-tag">Exercício</span>
+        </div>
+
+        <h2 class="section-title" id="titulo-ex3">Exercício 3</h2>
+        <p class="section-desc" id="desc-ex3">
+          <!-- COLOQUE A DESCRIÇÃO DO EXERCÍCIO 3 AQUI -->
+          Desenvolva um sistema capaz de monitorar a temperatura e a umidade da estufa. <br>
+          Os LEDs deverão funcionar como indicadores visuais das condições do ambiente.<br>
+          Regras de funcionamento: O aluno deverá estabelecer valores de referência para temperatura e umidade.
+          <br >Exemplo:
+          Condição adequada <br>
+          Temperatura e umidade dentro dos valores definidos:<br>
+          → LED verde ligado.<br>
+          Temperatura elevada <br>
+          Temperatura acima do limite:<br>
+          → LED vermelho ligado.<br>
+          Umidade inadequada <br>
+          Umidade abaixo do limite:<br>
+          → LED amarelo ligado.<br>
+          
+        </p>
+
+        <div class="content-grid">
+
+          <!-- Vídeo -->
+          <div class="card video-card" id="video-card-3">
+            <div class="card-header">
+              <div class="card-icon video-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+              </div>
+              <h3>Circuito no TinkerCAD</h3>
+            </div>
+            <div class="video-wrapper">
+              <video id="video-ex3" controls preload="metadata" aria-label="Vídeo do circuito do exercício 3">
+                <source src="videos/gravacao_exercicio03.mp4" type="video/mp4" />
+                Seu navegador não suporta vídeos HTML5.
+              </video>
+            </div>
+          </div>
+
+          <!-- Código -->
+          <div class="card code-card" id="code-card-3">
+            <div class="card-header">
+              <div class="card-icon code-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="currentColor">
+                  <path
+                    d="M9.4 16.6L4.8 12l4.6-4.6L8 6l-6 6 6 6 1.4-1.4zm5.2 0l4.6-4.6-4.6-4.6L16 6l6 6-6 6-1.4-1.4z" />
+                </svg>
+              </div>
+              <h3>Código Arduino</h3>
+              <button class="copy-btn" id="copy-btn-3" onclick="copyCode('code-ex3', 'copy-btn-3')"
+                aria-label="Copiar código do exercício 3">
+                <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                  <path
+                    d="M16 1H4c-1.1 0-2 .9-2 2v14h2V3h12V1zm3 4H8c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h11c1.1 0 2-.9 2-2V7c0-1.1-.9-2-2-2zm0 16H8V7h11v14z" />
+                </svg>
+                Copiar
+              </button>
+            </div>
+            <div class="code-scroll">
+              <pre><code id="code-ex3" class="arduino-code"><span class="c-comment">// LEDs</span>
+<span class="c-keyword">const</span> <span class="c-keyword">int</span> ledVerde = <span class="c-num">12</span>;
+<span class="c-keyword">const</span> <span class="c-keyword">int</span> ledAmarelo = <span class="c-num">7</span>;
+<span class="c-keyword">const</span> <span class="c-keyword">int</span> ledVermelho = <span class="c-num">4</span>;
+
+<span class="c-comment">// Sensores</span>
+<span class="c-keyword">const</span> <span class="c-keyword">int</span> sensorTemperatura = A0;
+<span class="c-keyword">const</span> <span class="c-keyword">int</span> sensorUmidade = A1;
+
+<span class="c-comment">// Valores de referência</span>
+<span class="c-keyword">const</span> <span class="c-keyword">float</span> limiteTemperatura = <span class="c-num">30.0</span>; <span class="c-comment">// °C</span>
+<span class="c-keyword">const</span> <span class="c-keyword">int</span> limiteUmidade = <span class="c-num">40</span>;         <span class="c-comment">// %</span>
+
+<span class="c-keyword">void</span> <span class="c-func">setup</span>() {
+  <span class="c-func">pinMode</span>(ledVerde, OUTPUT);
+  <span class="c-func">pinMode</span>(ledAmarelo, OUTPUT);
+  <span class="c-func">pinMode</span>(ledVermelho, OUTPUT);
+  Serial.<span class="c-func">begin</span>(<span class="c-num">9600</span>);
+}
+
+<span class="c-keyword">void</span> <span class="c-func">loop</span>() {
+
+  <span class="c-comment">// ==========================================</span>
+  <span class="c-comment">// LEITURA DA TEMPERATURA - TMP36</span>
+  <span class="c-comment">// ==========================================</span>
+
+  <span class="c-keyword">int</span> valorTemperatura = <span class="c-func">analogRead</span>(sensorTemperatura);
+  <span class="c-keyword">float</span> tensao = valorTemperatura * (<span class="c-num">5.0</span> / <span class="c-num">1023.0</span>);
+  <span class="c-keyword">float</span> temperatura = (tensao - <span class="c-num">0.5</span>) * <span class="c-num">100.0</span>;
+
+  <span class="c-comment">// ==========================================</span>
+  <span class="c-comment">// LEITURA DA UMIDADE</span>
+  <span class="c-comment">// ==========================================</span>
+
+  <span class="c-keyword">int</span> valorUmidade = <span class="c-func">analogRead</span>(sensorUmidade);
+  <span class="c-keyword">int</span> umidade = <span class="c-func">map</span>(valorUmidade, <span class="c-num">0</span>, <span class="c-num">1023</span>, <span class="c-num">0</span>, <span class="c-num">100</span>);
+  umidade = <span class="c-func">constrain</span>(umidade, <span class="c-num">0</span>, <span class="c-num">100</span>);
+
+  <span class="c-comment">// ==========================================</span>
+  <span class="c-comment">// MONITOR SERIAL</span>
+  <span class="c-comment">// ==========================================</span>
+
+  Serial.<span class="c-func">print</span>(<span class="c-str">"Temperatura: "</span>);
+  Serial.<span class="c-func">print</span>(temperatura);
+  Serial.<span class="c-func">print</span>(<span class="c-str">" °C | Umidade: "</span>);
+  Serial.<span class="c-func">print</span>(umidade);
+  Serial.<span class="c-func">println</span>(<span class="c-str">"%"</span>);
+
+  <span class="c-comment">// ==========================================</span>
+  <span class="c-comment">// VERIFICA AS CONDIÇÕES</span>
+  <span class="c-comment">// ==========================================</span>
+
+  <span class="c-keyword">bool</span> temperaturaAlta = temperatura &gt; limiteTemperatura;
+  <span class="c-keyword">bool</span> umidadeBaixa = umidade &lt; limiteUmidade;
+
+  <span class="c-comment">// ==========================================</span>
+  <span class="c-comment">// DESLIGA TODOS OS LEDs</span>
+  <span class="c-comment">// ==========================================</span>
+
+  <span class="c-func">digitalWrite</span>(ledVerde, LOW);
+  <span class="c-func">digitalWrite</span>(ledAmarelo, LOW);
+  <span class="c-func">digitalWrite</span>(ledVermelho, LOW);
+
+  <span class="c-comment">// TUDO ADEQUADO</span>
+  <span class="c-keyword">if</span> (!temperaturaAlta &amp;&amp; !umidadeBaixa) {
+    <span class="c-func">digitalWrite</span>(ledVerde, HIGH);
+  }
+
+  <span class="c-comment">// TEMPERATURA ALTA</span>
+  <span class="c-keyword">if</span> (temperaturaAlta) {
+    <span class="c-func">digitalWrite</span>(ledVermelho, HIGH);
+  }
+
+  <span class="c-comment">// UMIDADE BAIXA</span>
+  <span class="c-keyword">if</span> (umidadeBaixa) {
+    <span class="c-func">digitalWrite</span>(ledAmarelo, HIGH);
+  }
+
+  <span class="c-func">delay</span>(<span class="c-num">1000</span>);
+}
+              </code></pre>
+            </div>
+          </div>
+
+        </div><!-- .content-grid -->
+      </div><!-- .container -->
+    </section>
+
+  </main>
+
+  <footer class="rodape">
+    <p>Portal <span>Robótica Industrial 4.0</span> &mdash; Catálogo técnico e educativo sobre robôs industriais e IoT.</p>
+    <p>Projeto acadêmico desenvolvido para fins de estudo em Indústria 4.0.</p>
+  </footer>
+
+  <button id="botao-topo" aria-label="Voltar ao topo">&uarr;</button>
+
+  <script src="js/script.js"></script>
+  <script src="js/circuitos.js"></script>
+</body>
+</html>
